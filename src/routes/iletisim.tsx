@@ -1,24 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuoteForm } from "@/components/site/quote-form";
-import { pageHead } from "@/lib/seo";
+import { Crumbs } from "@/components/site/shell";
+import { JsonLd, breadcrumbJson, pageHead } from "@/lib/seo";
 import { contact, site } from "@/lib/site";
 
 export const Route = createFileRoute("/iletisim")({
   head: () =>
     pageHead({
       path: "/iletisim",
-      title: "Keşif ve iletişim",
+      title: "TV ünitesi keşif talebi",
       description:
-        "Zerafet Dekorasyon keşif formu. Duvar genişliği, şehir ve ilgi alanınızı yazın. Net teklif ölçü ve çizimden sonra gelir.",
+        "Özel ölçü TV ünitesi için keşif talebi. Duvar genişliği, şehir ve ilgi alanını yazın. Net teklif, ölçü ve çizimden sonra gelir.",
     }),
   component: ContactPage,
 });
 
 function ContactPage() {
   return (
-    <main id="icerik" className="mx-auto grid max-w-6xl gap-12 px-5 py-14 lg:grid-cols-[0.8fr_1.2fr]">
+    <main id="icerik">
+      <JsonLd data={breadcrumbJson([{ name: "Ana sayfa", path: "/" }, { name: "İletişim", path: "/iletisim" }])} />
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-14 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
-        <p className="text-xs tracking-widest text-brass uppercase">İletişim</p>
+        <Crumbs items={[{ label: "Ana sayfa", to: "/" }, { label: "İletişim" }]} />
+        <p className="mt-4 text-xs tracking-widest text-brass uppercase">İletişim</p>
         <h1 className="mt-3 font-display text-4xl text-ink sm:text-5xl">Ölçüyü konuşalım.</h1>
         <p className="mt-4 text-stone">
           {site.name} özel ölçü duvar sistemleri üretir. Form, ön keşif metni hazırlar. Fiyat içermez.
@@ -55,6 +59,7 @@ function ContactPage() {
         </dl>
       </div>
       <QuoteForm />
+      </div>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { contact, nav, site } from "@/lib/site";
+import { serviceSeo, services } from "@/lib/content";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -84,7 +85,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-ink text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="sm:col-span-2">
+        <div>
           <p className="font-display text-3xl">Zerafet Dekorasyon</p>
           <p className="mt-3 max-w-sm text-sm text-panel">{site.tagline}. Ölçüye göre üretilir, yerinde monte edilir.</p>
         </div>
@@ -95,6 +96,18 @@ export function SiteFooter() {
               <li key={item.to}>
                 <Link to={item.to} className="text-paper">
                   {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="text-xs tracking-widest text-brass uppercase">Hizmetler</p>
+          <ul className="mt-3 space-y-2 text-sm">
+            {services.map((item) => (
+              <li key={item.slug}>
+                <Link to="/hizmetler/$slug" params={{ slug: item.slug }} className="text-paper">
+                  {serviceSeo[item.slug]?.title ?? item.title}
                 </Link>
               </li>
             ))}
@@ -138,19 +151,47 @@ export function NotFoundPage() {
   );
 }
 
+export function Crumbs({
+  items,
+}: {
+  items: { label: string; to?: "/" | "/projeler" | "/hizmetler" | "/atolye" | "/iletisim" }[];
+}) {
+  return (
+    <nav aria-label="Sayfa yolu">
+      <ol className="flex flex-wrap items-center gap-2 text-xs tracking-widest text-brass uppercase">
+        {items.map((item, index) => (
+          <li key={item.label} className="flex items-center gap-2">
+            {index > 0 ? <span aria-hidden="true">/</span> : null}
+            {item.to ? (
+              <Link to={item.to} className="text-brass">
+                {item.label}
+              </Link>
+            ) : (
+              <span className="text-stone">{item.label}</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
 export function PageIntro({
   kicker,
   title,
   text,
+  crumbs,
 }: {
   kicker: string;
   title: string;
   text: string;
+  crumbs?: { label: string; to?: "/" | "/projeler" | "/hizmetler" | "/atolye" | "/iletisim" }[];
 }) {
   return (
     <header className="border-b border-line">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:py-20">
-        <p className="text-xs tracking-widest text-brass uppercase">{kicker}</p>
+        {crumbs ? <Crumbs items={crumbs} /> : null}
+        <p className={`text-xs tracking-widest text-brass uppercase ${crumbs ? "mt-4" : ""}`}>{kicker}</p>
         <h1 className="mt-3 max-w-3xl font-display text-4xl text-ink sm:text-6xl">{title}</h1>
         <p className="mt-5 max-w-2xl text-stone">{text}</p>
       </div>

@@ -1,16 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { filters, projects, type Tag } from "@/lib/content";
-import { pageHead } from "@/lib/seo";
+import { JsonLd, breadcrumbJson, pageHead } from "@/lib/seo";
 import { PageIntro } from "@/components/site/shell";
+import { site } from "@/lib/site";
 
 export const Route = createFileRoute("/projeler")({
   head: () =>
     pageHead({
       path: "/projeler",
-      title: "Uygulama projeleri",
+      title: "TV ünitesi uygulamaları",
       description:
-        "Zerafet Dekorasyon uygulama arşivi: lambri TV duvarları, mermer paneller, ceviz kaplamalar, ışıklı vitrinler, şömineli konsollar ve ışıklı ayna üniteleri.",
+        "Zerafet Dekorasyon uygulama arşivi: lambri TV duvarı, mermer panel, ceviz kaplama, ışıklı vitrin, şömineli konsol ve ledli ayna. Hepsi özel ölçü.",
     }),
   component: ProjectsPage,
 });
@@ -24,10 +25,28 @@ function ProjectsPage() {
 
   return (
     <main id="icerik">
+      <JsonLd data={breadcrumbJson([{ name: "Ana sayfa", path: "/" }, { name: "Projeler", path: "/projeler" }])} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "TV ünitesi uygulamaları",
+          itemListElement: projects.map((project, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: project.title,
+            url: `${site.url}/projeler/${project.slug}`,
+          })),
+        }}
+      />
       <PageIntro
         kicker="Arşiv"
         title="Uygulanan duvarlar."
         text="Her kare bitmiş ya da montaja hazır bir iş. Filtre, malzemeye göre arşivi daraltır."
+        crumbs={[
+          { label: "Ana sayfa", to: "/" },
+          { label: "Projeler" },
+        ]}
       />
       <div className="mx-auto max-w-6xl px-5 py-8">
         <div className="flex gap-2 overflow-x-auto pb-2" role="tablist" aria-label="Proje filtresi">

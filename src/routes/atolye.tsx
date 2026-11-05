@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { steps } from "@/lib/content";
-import { pageHead } from "@/lib/seo";
+import { pageHead, JsonLd, breadcrumbJson } from "@/lib/seo";
 import { PageIntro } from "@/components/site/shell";
 
 const materials = [
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/atolye")({
   head: () =>
     pageHead({
       path: "/atolye",
-      title: "Atölye ve üretim",
+      title: "Atölye, özel üretim ve montaj",
       description:
-        "Zerafet Dekorasyon atölyesi: keşif, çizim, özel üretim ve yerinde montaj. Mat lake, ahşap kaplama, mermer görünümlü panel, cam vitrin ve gizli LED.",
+        "TV ünitesi nasıl üretilir: keşif, çizim, atölyede kesim ve lake, yerinde montaj. Mat lake, ahşap kaplama, mermer görünümlü panel ve gizli LED.",
     }),
   component: AtolyePage,
 });
@@ -24,10 +24,15 @@ export const Route = createFileRoute("/atolye")({
 function AtolyePage() {
   return (
     <main id="icerik">
+      <JsonLd data={breadcrumbJson([{ name: "Ana sayfa", path: "/" }, { name: "Atölye", path: "/atolye" }])} />
       <PageIntro
         kicker="Atölye"
         title="Şantiye imalat yeri değildir."
         text="Kesim, lake ve ışık tesisatı atölyede biter. Eve yalnızca montaj ve hizalama kalır."
+        crumbs={[
+          { label: "Ana sayfa", to: "/" },
+          { label: "Atölye" },
+        ]}
       />
       <ol className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:grid-cols-2">
         {steps.map((step) => (

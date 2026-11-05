@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as AtolyeRouteImport } from './routes/atolye'
 import { Route as HizmetlerRouteImport } from './routes/hizmetler'
 import { Route as IletisimRouteImport } from './routes/iletisim'
@@ -21,6 +22,11 @@ import { Route as ProjelerSlugRouteImport } from './routes/projeler.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AtolyeRoute = AtolyeRouteImport.update({
@@ -61,6 +67,7 @@ const ProjelerSlugRoute = ProjelerSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/atolye': typeof AtolyeRoute
   '/hizmetler': typeof HizmetlerRouteWithChildren
   '/iletisim': typeof IletisimRoute
@@ -71,6 +78,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/atolye': typeof AtolyeRoute
   '/hizmetler': typeof HizmetlerRouteWithChildren
   '/iletisim': typeof IletisimRoute
@@ -82,6 +90,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/atolye': typeof AtolyeRoute
   '/hizmetler': typeof HizmetlerRouteWithChildren
   '/iletisim': typeof IletisimRoute
@@ -94,6 +103,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$'
     | '/atolye'
     | '/hizmetler'
     | '/iletisim'
@@ -104,6 +114,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$'
     | '/atolye'
     | '/hizmetler'
     | '/iletisim'
@@ -114,6 +125,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$'
     | '/atolye'
     | '/hizmetler'
     | '/iletisim'
@@ -125,6 +137,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
   AtolyeRoute: typeof AtolyeRoute
   HizmetlerRoute: typeof HizmetlerRouteWithChildren
   IletisimRoute: typeof IletisimRoute
@@ -139,6 +152,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/atolye': {
@@ -219,6 +239,7 @@ const ProjelerRouteWithChildren = ProjelerRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
   AtolyeRoute: AtolyeRoute,
   HizmetlerRoute: HizmetlerRouteWithChildren,
   IletisimRoute: IletisimRoute,

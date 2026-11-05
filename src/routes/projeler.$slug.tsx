@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { projectBySlug, relatedProjects } from "@/lib/content";
-import { JsonLd, pageHead } from "@/lib/seo";
+import { linksForProject, projectBySlug, relatedProjects } from "@/lib/content";
+import { JsonLd, breadcrumbJson, pageHead } from "@/lib/seo";
 import { site } from "@/lib/site";
+import { Crumbs } from "@/components/site/shell";
 
 export const Route = createFileRoute("/projeler/$slug")({
   loader: ({ params }) => {
@@ -9,49 +10,88 @@ export const Route = createFileRoute("/projeler/$slug")({
     if (!project) throw notFound();
     return { project };
   },
-  head: ({ loaderData }) =>
-    pageHead({
-      path: `/projeler/${loaderData?.project.slug ?? ""}`,
-      title: loaderData?.project.title ?? "Proje",
-      description: loaderData?.project.excerpt ?? site.description,
-    }),
+  head: ({ loaderData }) => {
+    const project = loaderData?.project;
+    const description = project
+      ? `${project.room} uygulaması. ${project.excerpt}`.slice(0, 160)
+      : site.description;
+    return pageHead({
+      path: `/projeler/${project?.slug ?? ""}`,
+      title: project ? `${project.title} — ${project.room}` : "Proje",
+      description,
+    });
+  },
   component: ProjectPage,
 });
 
 function ProjectPage() {
   const { project } = Route.useLoaderData();
   const related = relatedProjects(project.slug);
+  const topics = linksForProject(project.tags);
   const json = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: project.title,
+    headline: project.title,
     description: project.story,
     image: `${site.url}${project.image}`,
-    creator: { "@type": "Organization", name: site.name },
+    url: `${site.url}/projeler/${project.slug}`,
+    inLanguage: "tr-TR",
+    creator: { "@type": "Organization", name: site.name, url: site.url },
+    about: project.tags.join(", "),
   };
 
   return (
     <main id="icerik">
+      <JsonLd
+        data={breadcrumbJson([
+          { name: "Ana sayfa", path: "/" },
+          { name: "Projeler", path: "/projeler" },
+          { name: project.title, path: `/projeler/${project.slug}` },
+        ])}
+      />
       <JsonLd data={json} />
       <article>
         <header className="mx-auto max-w-6xl px-5 pt-10">
-          <p className="text-xs tracking-widest text-brass uppercase">
-            <Link to="/projeler" className="text-brass">
-              Projeler
-            </Link>
-            <span aria-hidden="true"> / </span>
-            {project.room}
-          </p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl text-ink sm:text-6xl">{project.title}</h1>
+          <Crumbs
+            items={[
+              { label: "Ana sayfa", to: "/" },
+              { label: "Projeler", to: "/projeler" },
+              { label: project.title },
+            ]}
+          />
+          <h1 className="mt-4 max-w-3xl font-display text-4xl text-ink sm:text-6xl">{project.title}</h1>
           <p className="mt-4 max-w-2xl text-stone">{project.excerpt}</p>
         </header>
-        <div className="mx-auto mt-8 max-w-6xl px-5">
+        <figure className="mx-auto mt-8 max-w-6xl px-5">
           <img src={project.image} alt={project.alt} className="max-h-[80vh] w-full object-cover" />
-        </div>
+          <figcaption className="mt-3 text-sm text-stone">
+            {project.room}. {project.alt}
+          </figcaption>
+        </figure>
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <h2 className="font-display text-3xl text-ink">İşin kendisi</h2>
             <p className="mt-4 text-stone">{project.story}</p>
+            {topics.length ? (
+              <ul className="mt-6 flex flex-wrap gap-3">
+                {topics.map((topic) =>
+                  topic.to === "/atolye" ? (
+                    <li key={topic.tag}>
+                      <Link to="/atolye" className="border border-line px-3 py-2 text-sm text-ink">
+                        {topic.label}
+                      </Link>
+                    </li>
+                  ) : (
+                    <li key={topic.tag}>
+                      <Link to="/hizmetler/$slug" params={{ slug: topic.slug ?? "tv-unitesi" }} className="border border-line px-3 py-2 text-sm text-ink">
+                        {topic.label}
+                      </Link>
+                    </li>
+                  ),
+                )}
+              </ul>
+            ) : null}
           </div>
           <dl className="border border-line bg-foam">
             {project.specs.map((spec) => (

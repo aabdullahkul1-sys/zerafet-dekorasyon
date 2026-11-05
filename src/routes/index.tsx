@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { faq, featuredProjects, services, steps } from "@/lib/content";
-import { JsonLd, pageHead } from "@/lib/seo";
+import { faq, featuredProjects, serviceSeo, services, steps } from "@/lib/content";
+import { JsonLd, faqJson, organizationJson, pageHead } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -17,30 +17,21 @@ function Home() {
   const lead = featuredProjects[0];
   const rest = featuredProjects.slice(1, 5);
   const json = {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    name: site.name,
-    description: site.description,
-    url: site.url,
-    image: `${site.url}${lead.image}`,
-    areaServed: "TR",
-    knowsLanguage: "tr",
-    makesOffer: services.map((item) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: item.title } })),
-  };
-  const faqJson = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
+    ...organizationJson(lead.image),
+    makesOffer: services.map((item) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: serviceSeo[item.slug]?.title ?? item.title,
+        url: `${site.url}/hizmetler/${item.slug}`,
+      },
     })),
   };
 
   return (
     <main id="icerik">
       <JsonLd data={json} />
-      <JsonLd data={faqJson} />
+      <JsonLd data={faqJson(faq)} />
       <section className="grid lg:min-h-[calc(100svh-4rem)] lg:grid-cols-2">
         <div className="order-2 flex flex-col justify-between gap-10 px-5 py-10 sm:px-8 lg:order-1 lg:px-12 lg:py-14">
           <div>
@@ -121,7 +112,10 @@ function Home() {
               <li key={service.slug} className="border-b border-line">
                 <Link to="/hizmetler/$slug" params={{ slug: service.slug }} className="flex items-baseline justify-between gap-4 py-4">
                   <span className="text-xs text-brass">{service.index}</span>
-                  <span className="flex-1 font-display text-2xl text-ink">{service.title}</span>
+                  <span className="flex-1">
+                    <span className="block font-display text-2xl text-ink">{serviceSeo[service.slug]?.title ?? service.title}</span>
+                    <span className="mt-1 block text-sm text-stone">{service.lead}</span>
+                  </span>
                 </Link>
               </li>
             ))}

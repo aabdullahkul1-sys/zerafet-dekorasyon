@@ -576,8 +576,24 @@ export const faq = [
     a: "Hayır. Konsola oturan ünite elektrikli ve dekoratiftir. Gerçek yanma yoktur, ısı ve priz payı çizimde bırakılır.",
   },
   {
+    q: "Mermer panel gerçek taş mı?",
+    a: "Hayır. Görünüm mermer, malzeme duvar paneli. Damar yönü çizimde işaretlenir; montajda rastgele kesilmez. Gerçek taş kaplama ayrıca konuşulmaz.",
+  },
+  {
+    q: "Asma konsol her duvara olur mu?",
+    a: "Taşıyıcı ya da sağlam dolu duvar gerekir. Alçıpan bölmede konsol ayaklı çözülür ya da arkaya taşıyıcı profil konur. Keşifte duvar cinsi bakılır.",
+  },
+  {
+    q: "Ledli TV duvarı ayrı tesisat ister mi?",
+    a: "Panelin içinde şerit ve sürücü için pay bırakılır. Priz, TV ile ışığın ayrı açılabilmesi için çizimde iki hat olarak işaretlenir.",
+  },
+  {
     q: "Ne kadar sürer?",
     a: "Süre, çizim kilidi ve malzeme sırasına bağlıdır. Keşifte net gün konuşulur; her işe uyan sabit bir gün yoktur.",
+  },
+  {
+    q: "Lambri nemli duvarda durur mu?",
+    a: "Islak hacim değildir. Salon ve antre için üretilir. Duvar nemliyse önce kaynak kurutulur; ıslak yüzeye kaplama yapılmaz.",
   },
 ];
 
@@ -603,12 +619,89 @@ export function relatedProjects(slug: string, limit = 3) {
 
 export const featuredProjects = projects.filter((item) => item.featured);
 
-export const sitemapPaths = [
-  "/",
-  "/projeler",
-  "/hizmetler",
-  "/atolye",
-  "/iletisim",
-  ...services.map((item) => `/hizmetler/${item.slug}`),
-  ...projects.map((item) => `/projeler/${item.slug}`),
+export const serviceSeo: Record<
+  string,
+  { title: string; description: string; note: string }
+> = {
+  "tv-unitesi": {
+    title: "Özel ölçü TV ünitesi",
+    description:
+      "Özel ölçü TV ünitesi: ekran eni, duvar genişliği ve priz yerine göre panel ile konsol. Hazır modül yok. Atölyede üretilir, yerinde monte edilir.",
+    note: "İlk üç ölçü ekranın eni, duvarın net genişliği ve prizin yeridir. Panel, askı payı kalacak kadar büyük çizilir.",
+  },
+  lambri: {
+    title: "Dekoratif lambri kaplama",
+    description:
+      "Dekoratif lambri: krem, beyaz, gri, adaçayı ve antrasit flüt. TV duvarı, niş veya tam duvar. Işık, çıta aralığına göre çizilir.",
+    note: "Flüt aralığı, ışığın ince bir çizgi mi yoksa düz bir gölge mi bırakacağını belirler. Renk, gündüz ve gece senaryosunda birlikte bakılır.",
+  },
+  "mermer-panel": {
+    title: "Mermer görünümlü TV paneli",
+    description:
+      "Mermer görünümlü TV paneli ve antre nişi. Beyaz, gri ve altın damar. Damar yönü korunur, halo ışıkla birlikte uygulanır.",
+    note: "Bu bir duvar paneli görünümüdür, ocak taşı değildir. Damarın sürekliliği kesim planında işaretlenir.",
+  },
+  aydinlatma: {
+    title: "Ledli TV duvarı",
+    description:
+      "Ledli TV duvarı: gizli çerçeve, dikey ışık hattı, vitrin içi ve aplik. Gece senaryosu ayrı açılır. Şeritler servis payıyla gizlenir.",
+    note: "Işık sonradan yapıştırılmaz. Sürücü ve şerit, panelin içinde ulaşılabilir bir boşlukta durur.",
+  },
+  vitrin: {
+    title: "Işıklı vitrin",
+    description:
+      "Işıklı vitrin ve açık raf. Cam kapak veya açık niş, içten sıcak LED. Kitaplık ve obje ölçüsüne göre raf aralığı.",
+    note: "Raf yüksekliği konulacak eşyaya göre değişir. Cam kapakta ince profil kullanılır; iç ışık göz hizasını yakmaz.",
+  },
+  somine: {
+    title: "Şömineli TV ünitesi",
+    description:
+      "Şömineli TV ünitesi: elektrikli dekoratif ünite, konsolun orta gözünde. Baca gerekmez. Isı payı ve priz çizimde bırakılır.",
+    note: "Alev efekti ile panel ışığı ayrı düşünülür. İkisi aynı anda bağırmaz. Yanma yoktur.",
+  },
+  "ayna-unitesi": {
+    title: "Ledli makyaj aynası",
+    description:
+      "Ledli makyaj aynası ve asma konsol. Yuvarlak halka ışık, yüzü eşit aydınlatır. Yatak odası ve giyinme için özel ölçü.",
+    note: "Ayna çapı duvar genişliğine, konsol derinliği oturma payına göre kısalır. Kulp metali odadaki diğer metalle eşleşir.",
+  },
+  "asma-konsol": {
+    title: "Asma TV sehpası",
+    description:
+      "Asma TV sehpası: ayaksız, gizli taşıyıcılı konsol. Göz sayısı duvar boyuna bölünür. Mat lake veya ahşap kaplama.",
+    note: "Alçıpan bölmede konsol ayaklı çözülür. Dolu duvarda taşıyıcı görünmez, yer boş kalır.",
+  },
+};
+
+export const tagLinks: { tag: Tag; to: "/hizmetler/$slug" | "/atolye"; slug?: string; label: string }[] = [
+  { tag: "lambri", to: "/hizmetler/$slug", slug: "lambri", label: "Dekoratif lambri" },
+  { tag: "mermer", to: "/hizmetler/$slug", slug: "mermer-panel", label: "Mermer görünümlü panel" },
+  { tag: "vitrin", to: "/hizmetler/$slug", slug: "vitrin", label: "Işıklı vitrin" },
+  { tag: "somine", to: "/hizmetler/$slug", slug: "somine", label: "Şömineli ünite" },
+  { tag: "ayna", to: "/hizmetler/$slug", slug: "ayna-unitesi", label: "Ledli ayna" },
+  { tag: "ahsap", to: "/atolye", label: "Ahşap kaplama" },
 ];
+
+export function linksForProject(tags: Tag[]) {
+  return tagLinks.filter((item) => tags.includes(item.tag));
+}
+
+const updated = "2026-11-05";
+
+export function sitemapEntries() {
+  const pages: { path: string; priority: string; image?: string; caption?: string }[] = [
+    { path: "/", priority: "1.0", image: "/works/mermer-somine.jpg", caption: "Mermer görünümlü şömineli TV duvarı" },
+    { path: "/hizmetler", priority: "0.9" },
+    { path: "/projeler", priority: "0.9" },
+    { path: "/atolye", priority: "0.7" },
+    { path: "/iletisim", priority: "0.6" },
+    ...services.map((item) => ({ path: `/hizmetler/${item.slug}`, priority: "0.8" })),
+    ...projects.map((item) => ({
+      path: `/projeler/${item.slug}`,
+      priority: "0.6",
+      image: item.image,
+      caption: item.alt,
+    })),
+  ];
+  return { updated, pages };
+}

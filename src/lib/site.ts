@@ -3,7 +3,7 @@ export const site = {
   shortName: "Zerafet",
   tagline: "Özel ölçü TV duvarları ve dekoratif kaplamalar",
   description:
-    "Zerafet Dekorasyon; özel ölçü TV üniteleri, dekoratif lambri, mermer görünümlü paneller, gizli LED, ışıklı vitrin, şömineli konsol ve ışıklı ayna üniteleri üretir. Ölçü alınır, atölyede hazırlanır, yerinde monte edilir.",
+    "Özel ölçü TV ünitesi, dekoratif lambri, ledli TV duvarı, mermer görünümlü panel, ışıklı vitrin ve şömineli asma konsol. Zerafet Dekorasyon ölçü alır, atölyede üretir, yerinde monte eder.",
   url: "https://zerafetdekorasyon.com",
   locale: "tr-TR",
 } as const;
