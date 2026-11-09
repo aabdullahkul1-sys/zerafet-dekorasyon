@@ -25,6 +25,10 @@ import {
   renderWebManifest,
 } from "../../scripts/grok-pwa-shared.mjs";
 
+// This is a customer site, not a Grok app. The published page must not ask
+// visitors to download Grok. Set before any HTML response is transformed.
+process.env.VITE_GROK_EXTENSIONS = "0";
+
 interface GrokPwaEvent {
   url: URL;
   req: { method: string; headers: Headers };
