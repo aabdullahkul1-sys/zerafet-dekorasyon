@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QuoteForm } from "@/components/site/quote-form";
 import { Crumbs } from "@/components/site/shell";
 import { JsonLd, breadcrumbJson, pageHead } from "@/lib/seo";
-import { contact, site } from "@/lib/site";
+import { contact, site, whatsappHref } from "@/lib/site";
 
 export const Route = createFileRoute("/iletisim")({
   head: () =>
@@ -25,7 +25,7 @@ function ContactPage() {
         <p className="mt-4 text-xs tracking-widest text-brass uppercase">İletişim</p>
         <h1 className="mt-3 font-display text-4xl text-ink sm:text-5xl">Ölçüyü konuşalım.</h1>
         <p className="mt-4 text-stone">
-          {site.name} özel ölçü duvar sistemleri üretir. Form, ön keşif metni hazırlar. Fiyat içermez.
+          {site.name} özel ölçü duvar sistemleri üretir. 180×80 cm ayna 3.500 TL’den başlar. Diğer işlerin net teklifi ölçüden sonra yazılır.
         </p>
         <dl className="mt-8 space-y-4 text-sm">
           <div>
@@ -36,16 +36,22 @@ function ContactPage() {
             <dt className="text-stone">Hizmet</dt>
             <dd className="text-ink">{contact.serviceNote}</dd>
           </div>
-          {contact.phoneDisplay ? (
-            <div>
-              <dt className="text-stone">Telefon</dt>
-              <dd>
-                <a className="text-ink" href={`tel:${contact.phoneTel}`}>
-                  {contact.phoneDisplay}
-                </a>
-              </dd>
-            </div>
-          ) : null}
+          <div>
+            <dt className="text-stone">Telefon</dt>
+            <dd>
+              <a className="text-ink" href={`tel:${contact.phoneTel}`}>
+                {contact.phoneDisplay}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt className="text-stone">WhatsApp</dt>
+            <dd>
+              <a className="text-ink" href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")}>
+                {contact.phoneDisplay}
+              </a>
+            </dd>
+          </div>
           {contact.instagram ? (
             <div>
               <dt className="text-stone">Instagram</dt>

@@ -1,9 +1,9 @@
 export const site = {
   name: "Zerafet Dekorasyon",
   shortName: "Zerafet",
-  tagline: "Özel ölçü TV duvarları ve dekoratif kaplamalar",
+  tagline: "Özel ölçü TV duvarları, ayna ve dresuar",
   description:
-    "Özel ölçü TV ünitesi, dekoratif lambri, ledli TV duvarı, mermer görünümlü panel, ışıklı vitrin ve şömineli asma konsol. Zerafet Dekorasyon ölçü alır, atölyede üretir, yerinde monte eder.",
+    "Özel ölçü TV ünitesi, ledli ayna ve dresuar. 180×80 cm ayna 3.500 TL’den başlar. Lambri, mermer panel ve şömineli konsol ölçüye göre üretilir, yerinde monte edilir.",
   url: "https://zerafetdekorasyon.com",
   locale: "tr-TR",
 } as const;
@@ -18,9 +18,9 @@ export const contact: {
   hours: string;
   serviceNote: string;
 } = {
-  phoneDisplay: "",
-  phoneTel: "",
-  whatsapp: "",
+  phoneDisplay: "0535 052 82 33",
+  phoneTel: "+905350528233",
+  whatsapp: "905350528233",
   email: "",
   instagram: "",
   hours: "Pazartesi–Cumartesi, 09:00–19:00",
@@ -33,3 +33,14 @@ export const nav = [
   { to: "/atolye", label: "Atölye" },
   { to: "/iletisim", label: "İletişim" },
 ] as const;
+
+export const mirrorPrice = {
+  size: "180×80 cm",
+  from: "3.500 TL",
+} as const;
+
+export function whatsappHref(text?: string) {
+  const base = `https://wa.me/${contact.whatsapp}`;
+  if (!text) return base;
+  return `${base}?text=${encodeURIComponent(text)}`;
+}

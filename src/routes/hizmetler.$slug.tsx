@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { projectsForTag, serviceBySlug, serviceSeo, services } from "@/lib/content";
 import { JsonLd, breadcrumbJson, pageHead } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { mirrorPrice, site } from "@/lib/site";
 import { Crumbs } from "@/components/site/shell";
 
 export const Route = createFileRoute("/hizmetler/$slug")({
@@ -33,6 +33,17 @@ function ServicePage() {
     provider: { "@type": "Organization", name: site.name, url: site.url },
     areaServed: { "@type": "Country", name: "Türkiye" },
     serviceType: seo?.title ?? service.title,
+    ...(service.slug === "ayna-unitesi"
+      ? {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "TRY",
+            price: "3500",
+            description: `${mirrorPrice.size} ledli ayna başlangıç fiyatı. Kompozisyon ve dresuar dahil değildir.`,
+            url: `${site.url}/hizmetler/ayna-unitesi`,
+          },
+        }
+      : {}),
   };
 
   return (

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { faq, featuredProjects, serviceSeo, services, steps } from "@/lib/content";
+import { faq, featuredProjects, projectBySlug, serviceSeo, services, steps } from "@/lib/content";
 import { JsonLd, faqJson, organizationJson, pageHead } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { contact, mirrorPrice, site, whatsappHref } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -71,6 +71,43 @@ function Home() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="bg-ink text-paper">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 lg:grid-cols-2">
+          <div>
+            <p className="text-xs tracking-widest text-brass uppercase">Ayna ve dresuar</p>
+            <h2 className="mt-3 font-display text-4xl sm:text-5xl">Özel ölçü. Başlangıç fiyatı yazıyor.</h2>
+            <p className="mt-4 max-w-md text-panel">
+              {mirrorPrice.size} ledli ayna {mirrorPrice.from}’den başlar. Kemer, daire, flüt ve dresuar duvara göre çizilir. O işler bu fiyata dahil değildir.
+            </p>
+            <p className="mt-8 font-display text-5xl">{mirrorPrice.from}</p>
+            <p className="text-sm text-panel">{mirrorPrice.size}, başlangıç</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href={whatsappHref("Merhaba, 180×80 ayna için yazıyorum.")} className="bg-paper px-5 py-3 text-sm text-ink">
+                WhatsApp
+              </a>
+              <Link to="/hizmetler/$slug" params={{ slug: "ayna-unitesi" }} className="border border-stone px-5 py-3 text-sm text-paper">
+                Ayna ve dresuar
+              </Link>
+            </div>
+            <a href={`tel:${contact.phoneTel}`} className="mt-4 inline-block text-sm text-panel">
+              {contact.phoneDisplay}
+            </a>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {(["ayna-kemer", "flut-dresuar"] as const).map((slug) => {
+              const project = projectBySlug(slug);
+              if (!project) return null;
+              return (
+                <Link key={slug} to="/projeler/$slug" params={{ slug }} className="block">
+                  <img src={project.image} alt={project.alt} className="aspect-[3/4] w-full object-cover" />
+                  <p className="mt-2 text-sm text-paper">{project.title}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">

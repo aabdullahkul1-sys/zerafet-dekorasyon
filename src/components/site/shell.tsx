@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { contact, nav, site } from "@/lib/site";
+import { contact, nav, site, whatsappHref } from "@/lib/site";
 import { serviceSeo, services } from "@/lib/content";
 
 export function SiteHeader() {
@@ -48,6 +48,9 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <a href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")} className="border border-line px-3 py-2.5 text-sm text-ink">
+            WhatsApp
+          </a>
           <Link to="/iletisim" className="hidden bg-ink px-4 py-2.5 text-sm text-paper sm:inline-flex">
             Keşif talep et
           </Link>
@@ -71,7 +74,13 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link to="/iletisim" className="mt-4 mb-3 bg-ink px-4 py-3 text-center text-sm text-paper">
+            <a
+              href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")}
+              className="mt-4 border border-line px-4 py-3 text-center text-sm text-ink"
+            >
+              WhatsApp · {contact.phoneDisplay}
+            </a>
+            <Link to="/iletisim" className="mt-3 mb-3 bg-ink px-4 py-3 text-center text-sm text-paper">
               Keşif talep et
             </Link>
           </nav>
@@ -120,6 +129,11 @@ export function SiteFooter() {
           {contact.phoneDisplay ? (
             <a className="mt-3 block text-sm text-paper" href={`tel:${contact.phoneTel}`}>
               {contact.phoneDisplay}
+            </a>
+          ) : null}
+          {contact.whatsapp ? (
+            <a className="mt-2 block text-sm text-paper" href={whatsappHref()}>
+              WhatsApp
             </a>
           ) : null}
           {contact.email ? (

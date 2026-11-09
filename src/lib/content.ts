@@ -279,6 +279,42 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "ayna-kemer",
+    title: "Kemer ayna, ışıklı daireler",
+    excerpt: "Antre duvarı: kemer ayna, iki ışıklı daire ve asma dresuar. Sağda aydınlatmalı dikey çıtalar.",
+    image: "/works/ayna-kemer.jpg",
+    alt: "Ledli kemer ayna, iki yuvarlak ışıklı ayna, beyaz asma dresuar ve arkadan aydınlatmalı dikey çıtalar",
+    tags: ["ayna", "lambri"],
+    room: "Antre",
+    featured: true,
+    story:
+      "Duvar bir ayna kompozisyonu olarak çizildi. Solda boydan kemer, üstte iki daire, altta iki çekmeceli asma dresuar. Sağdaki çıtalar duvardan kopuk ve arkadan ışık alıyor. Ölçü, kapı ve tavan kotuna göre alındı.",
+    specs: [
+      { label: "Ayna", value: "Kemer ve iki daire" },
+      { label: "Işık", value: "Ayna çevresi ve çıta arkası" },
+      { label: "Dresuar", value: "Asma, iki çekmece" },
+      { label: "Yan", value: "Dikey çıta" },
+    ],
+  },
+  {
+    slug: "flut-dresuar",
+    title: "Flütlü dresuar",
+    excerpt: "Beyaz flüt panellerin arasında boydan ayna, asma dresuar ve puf.",
+    image: "/works/flut-dresuar.jpg",
+    alt: "Beyaz flütlü yan paneller, boydan ayna, iki çekmeceli asma dresuar ve oturmalı puf",
+    tags: ["ayna", "lambri"],
+    room: "Antre",
+    featured: true,
+    story:
+      "Ayna iki flüt kanadın arasına oturuyor. Dresuar duvardan kopuk, iki eşit çekmece. Altında oturmalık var. Kapı ve koridor payı çizimde bırakıldı.",
+    specs: [
+      { label: "Ayna", value: "Boydan, düz" },
+      { label: "Yanlar", value: "Beyaz flüt" },
+      { label: "Dresuar", value: "Asma, iki çekmece" },
+      { label: "Oturuş", value: "Puf" },
+    ],
+  },
+  {
     slug: "led-ayna",
     title: "Işıklı yuvarlak ayna",
     excerpt: "Yatak odasında halka LED’li ayna ve pirinç kulplu makyaj konsolu.",
@@ -510,12 +546,13 @@ export const services: Service[] = [
   {
     slug: "ayna-unitesi",
     index: "07",
-    title: "Işıklı ayna ünitesi",
-    lead: "Yatak odası ve giyinme için halka LED’li ayna, asma makyaj konsolu.",
+    title: "Işıklı ayna ve dresuar",
+    lead: "180×80 cm ledli ayna 3.500 TL’den başlar. Kemer, daire ve flütlü dresuar ölçüye göre çizilir.",
     body: [
-      "Ayna ışığı yüze eşit düşer. Konsol derinliği oturma payına göre kısalır, kulp metali odadaki diğer metalle eşleşir.",
+      "Bu başlangıç fiyatı 180×80 cm ledli ayna içindir. Kemer, ikinci ayna, çıta, dresuar ve puf aynı fiyata dahil değildir; duvar ölçülünce ayrıca yazılır.",
+      "Işık aynanın çevresinde kalır. Dresuar derinliği oturma payına göre kısalır. Kompozisyon kapı, priz ve tavan kotuna göre biter.",
     ],
-    points: ["Yuvarlak veya oval ayna", "Halka LED", "Asma konsol", "Pirinç veya siyah kulp"],
+    points: ["180×80 cm, 3.500 TL’den", "Kemer ve daire", "Asma dresuar", "Flütlü yan panel"],
     tag: "ayna",
   },
   {
@@ -592,6 +629,10 @@ export const faq = [
     a: "Süre, çizim kilidi ve malzeme sırasına bağlıdır. Keşifte net gün konuşulur; her işe uyan sabit bir gün yoktur.",
   },
   {
+    q: "180×80 ayna ne kadar?",
+    a: "Bu ölçüde ledli ayna 3.500 TL’den başlar. Kemer, ikinci ayna, flüt, dresuar ve puf bu fiyata dahil değildir. Onlar duvar ölçülünce ayrıca yazılır.",
+  },
+  {
     q: "Lambri nemli duvarda durur mu?",
     a: "Islak hacim değildir. Salon ve antre için üretilir. Duvar nemliyse önce kaynak kurutulur; ıslak yüzeye kaplama yapılmaz.",
   },
@@ -660,10 +701,10 @@ export const serviceSeo: Record<
     note: "Alev efekti ile panel ışığı ayrı düşünülür. İkisi aynı anda bağırmaz. Yanma yoktur.",
   },
   "ayna-unitesi": {
-    title: "Ledli makyaj aynası",
+    title: "Özel ölçü ledli ayna",
     description:
-      "Ledli makyaj aynası ve asma konsol. Yuvarlak halka ışık, yüzü eşit aydınlatır. Yatak odası ve giyinme için özel ölçü.",
-    note: "Ayna çapı duvar genişliğine, konsol derinliği oturma payına göre kısalır. Kulp metali odadaki diğer metalle eşleşir.",
+      "180×80 cm ledli ayna 3.500 TL’den başlar. Kemer, daire ve flütlü dresuar özel ölçüyle çizilir. Zerafet Dekorasyon.",
+    note: "3.500 TL, 180×80 cm ayna için başlangıçtır. Duvar kompozisyonu ve dresuar aynı etikete yazılmaz.",
   },
   "asma-konsol": {
     title: "Asma TV sehpası",
@@ -686,7 +727,7 @@ export function linksForProject(tags: Tag[]) {
   return tagLinks.filter((item) => tags.includes(item.tag));
 }
 
-const updated = "2026-11-05";
+const updated = "2026-11-09";
 
 export function sitemapEntries() {
   const pages: { path: string; priority: string; image?: string; caption?: string }[] = [

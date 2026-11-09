@@ -10,7 +10,7 @@ export const Route = createFileRoute("/hizmetler")({
       path: "/hizmetler",
       title: "Özel ölçü TV ünitesi ve duvar kaplama",
       description:
-        "Özel ölçü TV ünitesi, dekoratif lambri, mermer görünümlü panel, ledli TV duvarı, ışıklı vitrin, şömineli konsol ve ledli makyaj aynası.",
+        "Özel ölçü TV ünitesi, dekoratif lambri, mermer panel, ledli TV duvarı, ışıklı vitrin, şömineli konsol. 180×80 cm ledli ayna 3.500 TL’den başlar.",
     }),
   component: ServicesPage,
 });

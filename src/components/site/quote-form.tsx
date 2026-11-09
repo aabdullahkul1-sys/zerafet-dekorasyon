@@ -2,7 +2,7 @@ import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { contact } from "@/lib/site";
 
 const widths = ["2 metreden dar", "2–3 metre", "3–4 metre", "4 metreden geniş", "Henüz ölçmedim"];
-const interests = ["TV ünitesi", "Lambri", "Mermer panel", "Vitrin", "Şömine", "Ayna ünitesi", "Emin değilim"];
+const interests = ["TV ünitesi", "Lambri", "Mermer panel", "Vitrin", "Şömine", "Ayna", "Dresuar", "Emin değilim"];
 
 type Draft = {
   name: string;

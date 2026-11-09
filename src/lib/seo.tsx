@@ -1,4 +1,4 @@
-import { site } from "@/lib/site";
+import { contact, site } from "@/lib/site";
 
 export function pageHead(opts: { title: string; description: string; path: string }) {
   const title = opts.path === "/" ? opts.title : `${opts.title} · ${site.name}`;
@@ -58,6 +58,7 @@ export function organizationJson(imagePath: string) {
     url: site.url,
     image: `${site.url}${imagePath}`,
     logo: `${site.url}/favicon.svg`,
+    telephone: contact.phoneTel,
     areaServed: { "@type": "Country", name: "Türkiye" },
     knowsLanguage: "tr",
     inLanguage: "tr-TR",
