@@ -27,8 +27,8 @@ function AtolyePage() {
       <JsonLd data={breadcrumbJson([{ name: "Ana sayfa", path: "/" }, { name: "Atölye", path: "/atolye" }])} />
       <PageIntro
         kicker="Atölye"
-        title="Şantiye imalat yeri değildir."
-        text="Kesim, lake ve ışık tesisatı atölyede biter. Eve yalnızca montaj ve hizalama kalır."
+        title="Üretim atölyede, montaj yerinde."
+        text="Kesim, lake ve aydınlatma tesisatı atölyede tamamlanır. Adreste yalnızca montaj ve hizalama yapılır."
         crumbs={[
           { label: "Ana sayfa", to: "/" },
           { label: "Atölye" },
@@ -60,11 +60,11 @@ function AtolyePage() {
         </div>
       </section>
       <section className="mx-auto max-w-3xl px-5 py-16">
-        <h2 className="font-display text-3xl text-ink">Ne yapmıyoruz</h2>
+        <h2 className="font-display text-3xl text-ink">Üretim ilkesi</h2>
         <ul className="mt-4 space-y-3 text-stone">
-          <li>Hazır modül satmıyoruz. Duvar uymuyorsa ürünü zorlamayız.</li>
-          <li>Sitede bağlayıcı fiyat yazmayız. Teklif, ölçü ve çizimden sonra gelir.</li>
-          <li>Işığı sonradan yapıştırılmış bir bant gibi bırakmayız.</li>
+          <li>Her iş, duvarın ölçüsüne göre üretilir. Hazır modül kullanılmaz.</li>
+          <li>TV ünitelerinde net fiyat, ölçü ve çizimden sonra verilir.</li>
+          <li>Aydınlatma, kaplamanın parçası olarak planlanır.</li>
         </ul>
         <Link to="/iletisim" className="mt-8 inline-flex bg-ink px-5 py-3 text-sm text-paper">
           Keşif talep et

@@ -82,7 +82,7 @@ export function QuoteForm() {
         <p className="text-xs tracking-widest text-brass uppercase">Talep hazır</p>
         <h2 className="mt-2 font-display text-3xl text-ink">Teşekkürler, {sent.name.split(" ")[0]}.</h2>
         <p className="mt-3 text-sm text-stone">
-          Bu bir ön keşiftir, fiyat içermez. Metni atölyeye iletin; ölçüden sonra yazılı teklif gelir.
+          Talebiniz hazır. Metni atölyeye iletin; net fiyat, ölçüden sonra belirlenir.
         </p>
         <pre className="mt-5 overflow-x-auto bg-paper p-4 text-sm whitespace-pre-wrap text-ink">{text}</pre>
         <div className="mt-4 flex flex-wrap gap-3">
@@ -140,7 +140,7 @@ export function QuoteForm() {
         </div>
       </div>
       <button type="submit" className="mt-6 bg-ink px-5 py-3 text-sm text-paper">
-        Talebi hazırla
+        Talebi gönder
       </button>
     </form>
   );

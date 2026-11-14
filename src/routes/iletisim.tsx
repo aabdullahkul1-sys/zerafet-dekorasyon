@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QuoteForm } from "@/components/site/quote-form";
 import { Crumbs } from "@/components/site/shell";
 import { JsonLd, breadcrumbJson, pageHead } from "@/lib/seo";
-import { contact, site, whatsappHref } from "@/lib/site";
+import { contact, whatsappHref } from "@/lib/site";
 
 export const Route = createFileRoute("/iletisim")({
   head: () =>
@@ -23,9 +23,9 @@ function ContactPage() {
       <div>
         <Crumbs items={[{ label: "Ana sayfa", to: "/" }, { label: "İletişim" }]} />
         <p className="mt-4 text-xs tracking-widest text-brass uppercase">İletişim</p>
-        <h1 className="mt-3 font-display text-4xl text-ink sm:text-5xl">Ölçüyü konuşalım.</h1>
+        <h1 className="mt-3 font-display text-4xl text-ink sm:text-5xl">Keşif ve teklif</h1>
         <p className="mt-4 text-stone">
-          {site.name} özel ölçü duvar sistemleri üretir. 180×80 cm ayna 3.500 TL’den başlar. Diğer işlerin net teklifi ölçüden sonra yazılır.
+          Zerafet Dekorasyon, özel ölçü duvar sistemleri üretir. 180×80 cm LED’li ayna 3.500 TL’den başlar. TV ünitesi teklifi, ölçü alındıktan sonra hazırlanır.
         </p>
         <dl className="mt-8 space-y-4 text-sm">
           <div>

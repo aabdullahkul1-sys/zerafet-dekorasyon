@@ -37,10 +37,10 @@ function Home() {
           <div>
             <p className="text-xs tracking-widest text-brass uppercase">Özel ölçü duvar sistemleri</p>
             <h1 className="mt-4 max-w-xl font-display text-4xl text-ink sm:text-6xl">
-              Televizyonun durduğu duvar, odanın kendisi olsun.
+              Özel ölçü TV duvarları.
             </h1>
             <p className="mt-5 max-w-md text-stone">
-              Lambri, mermer görünümlü panel, çubuk LED, ışıklı vitrin ve şömineli konsol. Her parça duvarın ölçüsüne göre atölyede üretilir, yerinde monte edilir.
+              Lambri, mermer görünümlü panel, çubuk LED, ışıklı vitrin ve şömineli konsol. Üretim atölyede tamamlanır, montaj yerinde yapılır.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -61,9 +61,9 @@ function Home() {
       <section className="border-y border-line">
         <ul className="mx-auto grid max-w-6xl gap-px bg-line sm:grid-cols-3">
           {[
-            ["Özel ölçü", "Hazır modül yok. Duvar, priz ve ekran birlikte çizilir."],
-            ["Işık içeride", "LED ve aplik panelin parçasıdır, sonradan yapıştırılmaz."],
-            ["Tek el", "Lambri, vitrin, şömine ve ayna aynı atölyeden çıkar."],
+            ["Özel ölçü", "Duvar, priz ve ekran ölçüsü birlikte ele alınır. Hazır modül kullanılmaz."],
+            ["Entegre aydınlatma", "LED ve aplik, panelin içinde planlanır."],
+            ["Tek atölye", "Lambri, vitrin, şömine ve ayna aynı ekip tarafından üretilir."],
           ].map(([title, text]) => (
             <li key={title} className="bg-paper px-5 py-8">
               <h2 className="font-display text-2xl text-ink">{title}</h2>
@@ -82,7 +82,7 @@ function Home() {
               180×80 cm LED’li ayna 3.500 TL’den başlar. Kemer ayna, yuvarlak ayna, flüt kaplama ve dresuar bu tutara dahil değildir. Onların fiyatı, yerinde ölçü alındıktan sonra ayrıca belirlenir.
             </p>
             <p className="mt-8 font-display text-5xl">{mirrorPrice.from}</p>
-            <p className="text-sm text-panel">{mirrorPrice.size}, başlangıç</p>
+            <p className="text-sm text-panel">{mirrorPrice.size}, başlangıç fiyatı</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={whatsappHref()} className="bg-paper px-5 py-3 text-sm text-ink">
                 WhatsApp
@@ -112,7 +112,7 @@ function Home() {
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="font-display text-4xl text-ink">Seçilen işler</h2>
+          <h2 className="font-display text-4xl text-ink">Seçilen uygulamalar</h2>
           <Link to="/projeler" className="text-sm text-brass">
             Tümü
           </Link>
@@ -139,7 +139,7 @@ function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr] sm:py-20">
           <div>
             <p className="text-xs tracking-widest text-brass uppercase">Hizmetler</p>
-            <h2 className="mt-3 font-display text-4xl text-ink">Duvarın ihtiyaç duyduğu parçalar.</h2>
+            <h2 className="mt-3 font-display text-4xl text-ink">Üretim kalemleri</h2>
             <Link to="/hizmetler" className="mt-6 inline-flex text-sm text-ink">
               Hizmetlerin tümü
             </Link>
@@ -161,7 +161,7 @@ function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <h2 className="font-display text-4xl text-ink">Dört adım</h2>
+        <h2 className="font-display text-4xl text-ink">Çalışma düzeni</h2>
         <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
             <li key={step.index}>
@@ -175,7 +175,7 @@ function Home() {
 
       <section className="border-t border-line">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:py-20">
-          <h2 className="font-display text-4xl text-ink">Sık sorulanlar</h2>
+          <h2 className="font-display text-4xl text-ink">Sık sorulan sorular</h2>
           <div className="mt-6">
             {faq.map((item) => (
               <details key={item.q} className="group border-b border-line">

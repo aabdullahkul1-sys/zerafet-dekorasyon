@@ -493,10 +493,10 @@ export const services: Service[] = [
     slug: "tv-unitesi",
     index: "01",
     title: "Özel ölçü TV ünitesi",
-    lead: "Televizyon bir modülün içine sıkıştırılmaz. Panel, duvarın genişliğine ve ekranın ölçüsüne göre çizilir.",
+    lead: "Panel ve konsol, duvar genişliği ile ekran ölçüsüne göre üretilir.",
     body: [
-      "Priz, anten ve askı payı çizimde yerini alır. Panel ekrandan bir kademe büyük olur; ışık çerçevesi televizyonun kenarına yapışmaz.",
-      "Konsol yüzer ya da ayaklı olabilir. Göz sayısı, kapak yönü ve açık niş, odadaki eşyaya göre belirlenir.",
+      "Priz, anten ve askı payı çizimde belirlenir. Panel, ekrandan bir kademe büyük olur; ışık çerçevesi televizyonun kenarına yapışmaz.",
+      "Konsol asma ya da ayaklı olabilir. Göz sayısı, kapak yönü ve açık niş, odaya göre planlanır.",
     ],
     points: ["TV ölçüsüne göre panel", "Priz ve kablo payı", "Asma veya ayaklı konsol", "Yerinde hizalama"],
     tag: "lambri",
@@ -505,10 +505,10 @@ export const services: Service[] = [
     slug: "lambri",
     index: "02",
     title: "Dekoratif lambri",
-    lead: "Flütlü kaplama duvarı düz bir fondan ritme çevirir. Krem, beyaz, gri, adaçayı ve antrasit.",
+    lead: "Flütlü duvar kaplaması. Krem, beyaz, gri, adaçayı ve antrasit seçenekleri vardır.",
     body: [
-      "Çıta aralığı ve derinlik ışığın nasıl düşeceğini değiştirir. Aplik ve dikey LED, flütün üzerinde ayrı bir tempo kurar.",
-      "Lambri tek başına da durur, mermer ya da ahşap bir panelle de birleşir.",
+      "Çıta aralığı ve derinlik, ışığın duvarda nasıl duracağını belirler. Aplik ve dikey LED, flütün üzerine ayrıca yerleştirilebilir.",
+      "Lambri tek başına uygulanabilir ya da mermer görünümlü ve ahşap panelle birlikte kullanılabilir.",
     ],
     points: ["Flüt aralığı çizimde netleşir", "Mat lake renk", "Tam duvar veya niş", "Kapı ve tavan kotuna göre biter"],
     tag: "lambri",
@@ -517,10 +517,10 @@ export const services: Service[] = [
     slug: "mermer-panel",
     index: "03",
     title: "Mermer görünümlü panel",
-    lead: "Beyaz, gri ve altın damarlı yüzeyler. Doğal taş hissi, duvar ölçüsüne göre panel.",
+    lead: "Beyaz, gri ve altın damarlı panel. TV arkası ve antre nişi için üretilir.",
     body: [
-      "Mermer görünümlü plaka TV’nin arkasına ya da antre nişine gelir. Yanında flüt veya sade bir kaset bırakılır ki damar nefes alsın.",
-      "Derz ve damar yönü çizimde işaretlenir; montajda damar rastgele kesilmez.",
+      "Mermer görünümlü plaka, televizyonun arkasına ya da antre nişine uygulanır. Yanında flüt veya sade bir panel bırakılarak damar öne çıkarılır.",
+      "Derz ve damar yönü çizimde işaretlenir. Montajda damar rastgele kesilmez.",
     ],
     points: ["Damar yönü korunur", "TV arkası veya antre nişi", "Halo ışık ile birlikte", "Yan flüt ile dengelenir"],
     tag: "mermer",
@@ -529,10 +529,10 @@ export const services: Service[] = [
     slug: "aydinlatma",
     index: "04",
     title: "Gizli LED ve çubuk ışık",
-    lead: "Çubuk LED, gizli çerçeve ve aplik. Işık panelin içinde, çizimde yerini alır.",
+    lead: "Dikey çubuk LED, gizli çerçeve ve aplik. Aydınlatma, panelin içinde planlanır.",
     body: [
-      "Dikey çubuklar flütün üstünden iner; boyları aynı olmak zorunda değildir. Çerçeve LED’i televizyonun kenarını tutar, konsolun altı ayrı bir hat olabilir.",
-      "Şeritler servis boşluğuyla gizlenir. Gece senaryosu gündüzden bağımsız açılır.",
+      "Dikey çubukların boyu ve aralığı duvar genişliğine göre belirlenir. Çerçeve LED’i televizyonun çevresini aydınlatır, konsolun altı ayrı bir hat olabilir.",
+      "Şeritler servis boşluğuyla gizlenir. Gece aydınlatması gündüzden bağımsız açılır.",
     ],
     points: ["Dikey çubuk LED", "TV çevresi çerçevesi", "Ayrı senaryo", "Servis payı"],
     tag: "lambri",
@@ -541,7 +541,7 @@ export const services: Service[] = [
     slug: "vitrin",
     index: "05",
     title: "Işıklı vitrin ve raf",
-    lead: "Cam kapaklı ya da açık. Kitap, obje ya da yalnızca ışık için.",
+    lead: "Cam kapaklı veya açık raf. İç aydınlatma, kitap ve obje ölçüsüne göre ayarlanır.",
     body: [
       "Raf aralığı konulacak eşyaya göre değişir. Cam kapakta ince siyah veya gövde renginde profil kullanılır.",
       "İç ışık rafın altından ya da dikey bir hattan gelir; göz almaması için panelin içinde kalır.",
@@ -553,10 +553,10 @@ export const services: Service[] = [
     slug: "somine",
     index: "06",
     title: "Şömineli konsol",
-    lead: "Elektrikli, dekoratif ünite. Baca istemez. Konsolun orta gözüne oturur.",
+    lead: "Elektrikli dekoratif şömine. Baca gerektirmez, konsolun orta bölümüne yerleşir.",
     body: [
-      "Şömine ölçüsü konsol çizilirken belirlenir. Alev efekti ile panel LED’i ayrı düşünülür; ikisi aynı anda bağırmaz.",
-      "Isı payı ve priz, gövdenin içinde çözülür.",
+      "Şömine ölçüsü, konsol çizilirken belirlenir. Alev efekti ve panel aydınlatması ayrı kontrol edilir.",
+      "Isı payı ve priz, gövdenin içinde çözülür. Gerçek yanma yoktur.",
     ],
     points: ["Elektrikli dekoratif ünite", "Baca gerekmez", "Orta göze gömme", "Ayrı priz"],
     tag: "somine",
@@ -570,16 +570,16 @@ export const services: Service[] = [
       "3.500 TL yalnızca 180×80 cm LED’li ayna içindir. Kemer, ikinci ayna, flüt, dresuar ve puf bu fiyata girmez. Duvar ölçülünce her biri kendi fiyatıyla teklife eklenir.",
       "Işık aynanın çevresinde kalır. Dresuar derinliği oturma payına göre kısalır. Kompozisyon kapı, priz ve tavan kotuna göre biter.",
     ],
-    points: ["180×80 cm, 3.500 TL’den", "Kemer ve daire", "Asma dresuar", "Flütlü yan panel"],
+    points: ["180×80 cm, 3.500 TL’den", "Kemer ve yuvarlak ayna", "Asma dresuar", "Flütlü yan panel"],
     tag: "ayna",
   },
   {
     slug: "asma-konsol",
     index: "08",
     title: "Asma konsol",
-    lead: "Yerde ayak yoksa oda daha geniş kalır. Taşıyıcı duvarın içindedir, görünmez.",
+    lead: "Ayak kullanılmadan duvara asılan konsol. Taşıyıcı gizlenir, zemin boş kalır.",
     body: [
-      "Göz sayısı duvar boyuna bölünür. Kapaklar pushesiz ya da gömme kulplu olabilir. Üst tabla TV ünitesiyle aynı renkte ya da bilinçli olarak ayrıdır.",
+      "Göz sayısı duvar boyuna göre bölünür. Kapaklar kulpsuz ya da gömme kulplu olabilir. Üst tabla, TV ünitesiyle aynı renkte ya da ayrı bir kaplamada üretilebilir.",
     ],
     points: ["Gizli taşıyıcı", "Eşit veya serbest göz", "Mat lake veya ahşap", "Üst tabla aydınlatması"],
     tag: "lambri",
@@ -590,41 +590,41 @@ export const steps = [
   {
     index: "01",
     title: "Keşif",
-    text: "Duvar genişliği, tavan yüksekliği, priz yeri ve televizyon ölçüsü yerinde alınır. Fotoğraf yeterse ön çizim de yapılır.",
+    text: "Duvar genişliği, tavan yüksekliği, priz yeri ve televizyon ölçüsü yerinde alınır.",
   },
   {
     index: "02",
     title: "Çizim",
-    text: "Panel, niş, ışık ve konsol aynı kâğıtta çözülür. Renk ve kaplama bu aşamada kilitlenir.",
+    text: "Panel, niş, aydınlatma ve konsol aynı planda çözülür. Renk ve kaplama bu aşamada netleşir.",
   },
   {
     index: "03",
-    title: "Atölye",
-    text: "Kesim, lake, LED tesisatı ve vitrin atölyede biter. Şantiye, montaj yeridir; imalat yeri değil.",
+    title: "Üretim",
+    text: "Kesim, lake, LED tesisatı ve vitrin atölyede tamamlanır.",
   },
   {
     index: "04",
     title: "Montaj",
-    text: "Duvar terazisi, askı ve ışık yerinde kontrol edilir. Teslim, ekran yerine oturunca tamamlanır.",
+    text: "Terazi, askı ve aydınlatma yerinde kontrol edilir. Teslim, ekran yerine oturunca tamamlanır.",
   },
 ];
 
 export const faq = [
   {
-    q: "Hazır ölçü mü çalışıyorsunuz?",
-    a: "Hayır. Her duvar ölçülür. Hazır modül, priz ve ekran denk gelmediğinde boşluk bırakır. Biz o boşluğu çizimde kapatırız.",
+    q: "Hazır ölçü ile çalışıyor musunuz?",
+    a: "Hayır. Her duvar yerinde ölçülür. Hazır modül, priz ve ekran ölçüsü denk gelmediğinde boşluk bırakır. Bu boşluk çizimde kapatılır.",
   },
   {
-    q: "Fiyat neden sitede yazmıyor?",
-    a: "Metre, kaplama, cam, şömine ve ışık senaryosu fiyatı değiştirir. Ölçü ve çizimden sonra yazılı teklif verilir. Sitedeki form ön keşif içindir, bağlayıcı fiyat değildir.",
+    q: "TV ünitesinin fiyatı neden baştan belli değil?",
+    a: "Metraj, kaplama, cam, şömine ve aydınlatma fiyatı değiştirir. Ölçü ve çizimden sonra yazılı teklif verilir. 180×80 cm LED’li aynanın başlangıç fiyatı ayrıca belirtilmiştir.",
   },
   {
     q: "Televizyonu siz mi takıyorsunuz?",
-    a: "Panel, seçilen ekranın ölçüsüne göre hazırlanır. Montajda askı hizalanır. Ekranın kendisi ayrıca temin edilir.",
+    a: "Panel, seçilen ekranın ölçüsüne göre hazırlanır. Montajda askı hizalanır. Televizyon ayrıca temin edilir.",
   },
   {
     q: "LED arızalanırsa duvar sökülür mü?",
-    a: "Şeritler servis boşluğuyla gizlenir. Amaç, bir arızada tüm kaplamayı dağıtmamak.",
+    a: "Hayır. Şeritler servis boşluğuyla gizlenir. Amaç, bir arızada tüm kaplamayı sökmeye gerek kalmamasıdır.",
   },
   {
     q: "Şömine baca ister mi?",
@@ -632,7 +632,7 @@ export const faq = [
   },
   {
     q: "Mermer panel gerçek taş mı?",
-    a: "Hayır. Görünüm mermer, malzeme duvar paneli. Damar yönü çizimde işaretlenir; montajda rastgele kesilmez. Gerçek taş kaplama ayrıca konuşulmaz.",
+    a: "Hayır. Görünüm mermerdir, malzeme duvar panelidir. Damar yönü çizimde işaretlenir ve montajda korunur.",
   },
   {
     q: "Asma konsol her duvara olur mu?",
@@ -644,7 +644,7 @@ export const faq = [
   },
   {
     q: "Ne kadar sürer?",
-    a: "Süre, çizim kilidi ve malzeme sırasına bağlıdır. Keşifte net gün konuşulur; her işe uyan sabit bir gün yoktur.",
+    a: "Süre, çizimin netleşmesine ve malzeme sırasına bağlıdır. Keşifte gün sayısı belirtilir.",
   },
   {
     q: "180×80 ayna ne kadar?",
@@ -698,13 +698,13 @@ export const serviceSeo: Record<
     title: "Mermer görünümlü TV paneli",
     description:
       "Mermer görünümlü TV paneli ve antre nişi. Beyaz, gri ve altın damar. Damar yönü korunur, halo ışıkla birlikte uygulanır.",
-    note: "Bu bir duvar paneli görünümüdür, ocak taşı değildir. Damarın sürekliliği kesim planında işaretlenir.",
+    note: "Bu bir duvar paneli görünümüdür, doğal taş değildir. Damarın sürekliliği kesim planında korunur.",
   },
   aydinlatma: {
     title: "Çubuk LED TV duvarı",
     description:
       "Çubuk LED TV duvarı: krem lambri üzerinde dikey ışık çubukları, ışıklı TV çerçevesi ve asma konsol. Özel ölçüde üretilir.",
-    note: "Çubukların boyu ve aralığı duvar genişliğine göre çizilir. Işık sonradan yapıştırılmaz.",
+    note: "Çubukların boyu ve aralığı duvar genişliğine göre belirlenir. Aydınlatma, kaplamadan sonra eklenmez.",
   },
   vitrin: {
     title: "Işıklı vitrin",
@@ -716,7 +716,7 @@ export const serviceSeo: Record<
     title: "Şömineli TV ünitesi",
     description:
       "Şömineli TV ünitesi: elektrikli dekoratif ünite, konsolun orta gözünde. Baca gerekmez. Isı payı ve priz çizimde bırakılır.",
-    note: "Alev efekti ile panel ışığı ayrı düşünülür. İkisi aynı anda bağırmaz. Yanma yoktur.",
+    note: "Alev efekti ve panel aydınlatması ayrı kontrol edilir. Ünite dekoratiftir, gerçek yanma yoktur.",
   },
   "ayna-unitesi": {
     title: "Özel ölçü LED’li ayna",

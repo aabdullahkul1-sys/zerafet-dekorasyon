@@ -10,7 +10,7 @@ export const Route = createFileRoute("/hizmetler")({
       path: "/hizmetler",
       title: "Özel ölçü TV ünitesi ve duvar kaplama",
       description:
-        "Özel ölçü TV ünitesi, dekoratif lambri, mermer panel, ledli TV duvarı, ışıklı vitrin, şömineli konsol. 180×80 cm ledli ayna 3.500 TL’den başlar.",
+        "Özel ölçü TV ünitesi, dekoratif lambri, mermer görünümlü panel, çubuk LED, ışıklı vitrin ve şömineli konsol. 180×80 cm LED’li ayna 3.500 TL’den başlar.",
     }),
   component: ServicesPage,
 });
@@ -33,9 +33,9 @@ function ServicesPage() {
       <JsonLd data={breadcrumbJson([{ name: "Ana sayfa", path: "/" }, { name: "Hizmetler", path: "/hizmetler" }])} />
       <JsonLd data={list} />
       <PageIntro
-        kicker="Ne yapıyoruz"
-        title="Duvar, parça parça değil, bir bütün."
-        text="Sekiz iş kalemi var. Çoğu projede birkaçı aynı çizimde birleşir. Hepsi atölyede üretilir."
+        kicker="Hizmetler"
+        title="Duvar, tek bir iş olarak ele alınır."
+        text="TV ünitesi, lambri, aydınlatma, vitrin, şömine ve ayna aynı çizimde birleşebilir. Üretim atölyede yapılır."
         crumbs={[
           { label: "Ana sayfa", to: "/" },
           { label: "Hizmetler" },
