@@ -71,23 +71,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "kemer-flut",
-    title: "Flüt üzerinde kemer ayna",
-    excerpt: "Bej flüt kaplamanın içinde kemer ayna ve tek çekmeceli asma konsol.",
-    image: "/works/kemer-flut.jpg",
-    alt: "Bej flütlü duvar kaplaması, kemer ayna ve asma konsol",
-    tags: ["ayna", "lambri"],
-    room: "Antre",
-    story:
-      "Ayna, flüt kaplamanın içine kemer olarak oturuyor. Konsol tek çekmece ve duvardan kopuk. Kapı pervazı kaplamanın dışında bırakıldı.",
-    specs: [
-      { label: "Zemin", value: "Bej flüt" },
-      { label: "Ayna", value: "Kemer" },
-      { label: "Konsol", value: "Asma, tek çekmece" },
-      { label: "Ölçü", value: "Kapı payına göre" },
-    ],
-  },
-  {
     slug: "antrasit-somine",
     title: "Antrasit lambri, ateş çizgisi",
     excerpt: "Koyu dikey çıtalar, beyaz aplikler ve konsolun içinde elektrikli şömine.",

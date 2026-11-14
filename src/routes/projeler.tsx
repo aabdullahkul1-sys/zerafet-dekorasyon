@@ -42,7 +42,7 @@ function ProjectsPage() {
       <PageIntro
         kicker="Arşiv"
         title="Uygulanan duvarlar."
-        text="Her kare bitmiş ya da montaja hazır bir iş. Filtre, malzemeye göre arşivi daraltır."
+        text="Her kare uygulanmış bir iş. Filtre, malzemeye göre arşivi daraltır."
         crumbs={[
           { label: "Ana sayfa", to: "/" },
           { label: "Projeler" },
