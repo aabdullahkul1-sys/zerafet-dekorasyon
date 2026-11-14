@@ -3,12 +3,24 @@ import { contact, site } from "@/lib/site";
 export function pageHead(opts: { title: string; description: string; path: string }) {
   const title = opts.path === "/" ? opts.title : `${opts.title} · ${site.name}`;
   const canonical = `${site.url}${opts.path}`;
+  const image = `${site.url}/share.jpg`;
   return {
     meta: [
       { title },
       { name: "description", content: opts.description },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "author", content: site.name },
+      { property: "og:title", content: title },
+      { property: "og:description", content: opts.description },
+      { property: "og:url", content: canonical },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "tr_TR" },
+      { property: "og:site_name", content: site.name },
+      { property: "og:image", content: image },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: opts.description },
+      { name: "twitter:image", content: image },
     ],
     links: [
       { rel: "canonical", href: canonical },
@@ -59,6 +71,20 @@ export function organizationJson(imagePath: string) {
     image: `${site.url}${imagePath}`,
     logo: `${site.url}/icon-180.png`,
     telephone: contact.phoneTel,
+    sameAs: contact.instagram ? [contact.instagram] : undefined,
+    currenciesAccepted: "TRY",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: contact.phoneTel,
+      contactType: "customer service",
+      availableLanguage: "Turkish",
+    },
     areaServed: { "@type": "Country", name: "Türkiye" },
     knowsLanguage: "tr",
     inLanguage: "tr-TR",
