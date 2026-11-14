@@ -148,7 +148,7 @@ export function SiteFooter() {
           ) : null}
           {contact.instagram ? (
             <a className="mt-2 block text-sm text-paper" href={contact.instagram} target="_blank" rel="noreferrer">
-              Instagram · @arya_aynadekor
+              Instagram · {contact.instagramHandle}
             </a>
           ) : null}
           {contact.email ? (

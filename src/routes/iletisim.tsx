@@ -57,7 +57,7 @@ function ContactPage() {
               <dt className="text-stone">Instagram</dt>
               <dd>
                 <a className="text-ink" href={contact.instagram} target="_blank" rel="noreferrer">
-                  @arya_aynadekor
+                  {contact.instagramHandle}
                 </a>
               </dd>
             </div>

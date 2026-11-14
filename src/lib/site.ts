@@ -15,6 +15,7 @@ export const contact: {
   whatsapp: string;
   email: string;
   instagram: string;
+  instagramHandle: string;
   hours: string;
   serviceNote: string;
 } = {
@@ -22,7 +23,8 @@ export const contact: {
   phoneTel: "+905350528233",
   whatsapp: "905350528233",
   email: "",
-  instagram: "https://www.instagram.com/arya_aynadekor/",
+  instagram: "https://www.instagram.com/zerafet_ayna_dekor/",
+  instagramHandle: "@zerafet_ayna_dekor",
   hours: "Pazartesi–Cumartesi, 09:00–19:00",
   serviceNote: "Yerinde keşif ve montaj. Net teklif, ölçü ve çizimden sonra yazılır.",
 };
