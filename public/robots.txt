@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zerafet-dekorasyon.vercel.app/sitemap.xml
+Sitemap: https://zerafetdekorasyon.com/sitemap.xml
