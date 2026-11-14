@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { projectsForTag, serviceBySlug, serviceSeo, services } from "@/lib/content";
 import { JsonLd, breadcrumbJson, pageHead } from "@/lib/seo";
-import { mirrorPrice, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import { Crumbs } from "@/components/site/shell";
 
 export const Route = createFileRoute("/hizmetler/$slug")({
@@ -39,7 +39,7 @@ function ServicePage() {
             "@type": "Offer",
             priceCurrency: "TRY",
             price: "3500",
-            description: `${mirrorPrice.size} ledli ayna başlangıç fiyatı. Kompozisyon ve dresuar dahil değildir.`,
+            description: "180×80 cm LED’li ayna başlangıç fiyatı. Kemer, yuvarlak ayna, flüt ve dresuar dahil değildir.",
             url: `${site.url}/hizmetler/ayna-unitesi`,
           },
         }

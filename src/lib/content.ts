@@ -582,9 +582,9 @@ export const services: Service[] = [
     slug: "ayna-unitesi",
     index: "07",
     title: "Işıklı ayna ve dresuar",
-    lead: "180×80 cm ledli ayna 3.500 TL’den başlar. Kemer, daire ve flütlü dresuar ölçüye göre çizilir.",
+    lead: "180×80 cm LED’li ayna 3.500 TL’den başlar. Kemer, yuvarlak ayna ve flütlü dresuar ayrıca fiyatlanır.",
     body: [
-      "Bu başlangıç fiyatı 180×80 cm ledli ayna içindir. Kemer, ikinci ayna, çıta, dresuar ve puf aynı fiyata dahil değildir; duvar ölçülünce ayrıca yazılır.",
+      "3.500 TL yalnızca 180×80 cm LED’li ayna içindir. Kemer, ikinci ayna, flüt, dresuar ve puf bu fiyata girmez. Duvar ölçülünce her biri kendi fiyatıyla teklife eklenir.",
       "Işık aynanın çevresinde kalır. Dresuar derinliği oturma payına göre kısalır. Kompozisyon kapı, priz ve tavan kotuna göre biter.",
     ],
     points: ["180×80 cm, 3.500 TL’den", "Kemer ve daire", "Asma dresuar", "Flütlü yan panel"],
@@ -665,7 +665,7 @@ export const faq = [
   },
   {
     q: "180×80 ayna ne kadar?",
-    a: "Bu ölçüde ledli ayna 3.500 TL’den başlar. Kemer, ikinci ayna, flüt, dresuar ve puf bu fiyata dahil değildir. Onlar duvar ölçülünce ayrıca yazılır.",
+    a: "180×80 cm LED’li ayna 3.500 TL’den başlar. Kemer, ikinci ayna, flüt, dresuar ve puf bu fiyata girmez. Onlar duvar ölçülünce ayrıca fiyatlanır.",
   },
   {
     q: "Lambri nemli duvarda durur mu?",
@@ -736,10 +736,10 @@ export const serviceSeo: Record<
     note: "Alev efekti ile panel ışığı ayrı düşünülür. İkisi aynı anda bağırmaz. Yanma yoktur.",
   },
   "ayna-unitesi": {
-    title: "Özel ölçü ledli ayna",
+    title: "Özel ölçü LED’li ayna",
     description:
-      "180×80 cm ledli ayna 3.500 TL’den başlar. Kemer, daire ve flütlü dresuar özel ölçüyle çizilir. Zerafet Dekorasyon.",
-    note: "3.500 TL, 180×80 cm ayna için başlangıçtır. Duvar kompozisyonu ve dresuar aynı etikete yazılmaz.",
+      "180×80 cm LED’li ayna 3.500 TL’den başlar. Kemer, yuvarlak ayna ve flütlü dresuar ayrıca fiyatlanır. Zerafet Dekorasyon.",
+    note: "3.500 TL, 180×80 cm LED’li ayna içindir. Duvar kompozisyonu ve dresuar bu fiyata girmez.",
   },
   "asma-konsol": {
     title: "Asma TV sehpası",

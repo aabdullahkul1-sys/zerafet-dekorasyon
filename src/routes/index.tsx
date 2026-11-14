@@ -77,9 +77,9 @@ function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 lg:grid-cols-2">
           <div>
             <p className="text-xs tracking-widest text-brass uppercase">Ayna ve dresuar</p>
-            <h2 className="mt-3 font-display text-4xl sm:text-5xl">Özel ölçü. Başlangıç fiyatı yazıyor.</h2>
+            <h2 className="mt-3 font-display text-4xl sm:text-5xl">Ayna, duvarınıza göre yapılır.</h2>
             <p className="mt-4 max-w-md text-panel">
-              {mirrorPrice.size} ledli ayna {mirrorPrice.from}’den başlar. Kemer, daire, flüt ve dresuar duvara göre çizilir. O işler bu fiyata dahil değildir.
+              180×80 cm LED’li ayna 3.500 TL’den başlar. Kemer ayna, yuvarlak ayna, flüt kaplama ve dresuar bu tutara dahil değildir. Onların fiyatı, yerinde ölçü alındıktan sonra ayrıca belirlenir.
             </p>
             <p className="mt-8 font-display text-5xl">{mirrorPrice.from}</p>
             <p className="text-sm text-panel">{mirrorPrice.size}, başlangıç</p>
