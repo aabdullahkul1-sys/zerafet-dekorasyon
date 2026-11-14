@@ -18,6 +18,12 @@ export const contact: {
   instagramHandle: string;
   hours: string;
   serviceNote: string;
+  addressLines: readonly string[];
+  streetAddress: string;
+  district: string;
+  city: string;
+  postalCode: string;
+  mapUrl: string;
 } = {
   phoneDisplay: "0535 052 82 33",
   phoneTel: "+905350528233",
@@ -27,6 +33,13 @@ export const contact: {
   instagramHandle: "@zerafet_ayna_dekor",
   hours: "Pazartesi–Cumartesi, 09:00–19:00",
   serviceNote: "Yerinde keşif ve montaj. TV ünitelerinde net fiyat, ölçü ve çizimden sonra belirlenir.",
+  addressLines: ["Habipler Mahallesi, 2723. Sokak", "No: 27A Dükkân", "34270 Sultangazi / İstanbul"],
+  streetAddress: "Habipler Mahallesi, 2723. Sokak, No: 27A, Dükkân",
+  district: "Sultangazi",
+  city: "İstanbul",
+  postalCode: "34270",
+  mapUrl:
+    "https://www.google.com/maps/search/?api=1&query=Habipler+Mahallesi+2723.+Sokak+No+27A+Sultangazi+Istanbul",
 };
 
 export const nav = [

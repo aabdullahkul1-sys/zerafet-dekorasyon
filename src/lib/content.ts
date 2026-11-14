@@ -656,7 +656,7 @@ export const faq = [
   },
   {
     q: "İstanbul’da hangi ilçelere geliyorsunuz?",
-    a: "Keşif ve montaj, İstanbul’un Avrupa ve Anadolu yakasında yapılır. Kadıköy, Üsküdar, Ataşehir, Beşiktaş, Şişli, Bakırköy, Başakşehir ve Beylikdüzü bu bölgededir. İlçelerde şube yoktur; ölçü yerinde alınır.",
+    a: "Atölye Sultangazi Habipler’dedir: 2723. Sokak No: 27A. Keşif, İstanbul’un Avrupa ve Anadolu yakasında, işin yapılacağı adreste yapılır. Kadıköy, Üsküdar, Ataşehir, Beşiktaş, Şişli, Bakırköy, Başakşehir ve Beylikdüzü bu bölgededir. Diğer ilçelerde şube yoktur.",
   },
   {
     q: "Müteahhit ve emlak ofisleriyle çalışıyor musunuz?",

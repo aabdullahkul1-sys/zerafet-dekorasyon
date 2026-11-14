@@ -155,6 +155,13 @@ export function SiteFooter() {
         <div>
           <p className="text-xs tracking-widest text-brass uppercase">Atölye</p>
           <p className="mt-3 text-sm text-panel">{contact.hours}</p>
+          <a className="mt-2 block text-sm text-paper" href={contact.mapUrl} target="_blank" rel="noreferrer">
+            {contact.addressLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </a>
           <p className="mt-2 text-sm text-panel">{contact.serviceNote}</p>
           {contact.phoneDisplay ? (
             <a className="mt-3 block text-sm text-paper" href={`tel:${contact.phoneTel}`}>

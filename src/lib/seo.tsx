@@ -71,6 +71,15 @@ export function organizationJson(imagePath: string) {
     image: `${site.url}${imagePath}`,
     logo: `${site.url}/icon-180.png`,
     telephone: contact.phoneTel,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: contact.streetAddress,
+      addressLocality: contact.district,
+      addressRegion: contact.city,
+      postalCode: contact.postalCode,
+      addressCountry: "TR",
+    },
+    hasMap: contact.mapUrl,
     sameAs: contact.instagram ? [contact.instagram] : undefined,
     currenciesAccepted: "TRY",
     openingHoursSpecification: {

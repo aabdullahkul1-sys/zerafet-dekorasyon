@@ -29,6 +29,18 @@ function ContactPage() {
         </p>
         <dl className="mt-8 space-y-4 text-sm">
           <div>
+            <dt className="text-stone">Atölye</dt>
+            <dd className="text-ink">
+              <a href={contact.mapUrl} target="_blank" rel="noreferrer">
+                {contact.addressLines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </a>
+            </dd>
+          </div>
+          <div>
             <dt className="text-stone">Saatler</dt>
             <dd className="text-ink">{contact.hours}</dd>
           </div>

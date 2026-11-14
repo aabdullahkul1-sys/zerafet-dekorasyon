@@ -7,7 +7,7 @@ import { contact, site, whatsappHref } from "@/lib/site";
 const questions = [
   {
     q: "Her ilçede dükkân var mı?",
-    a: "Yok. Atölye tek. Kadıköy, Şişli, Başakşehir veya Pendik fark etmez; ölçü adreste alınır, montaj aynı ekip tarafından yapılır.",
+    a: "Atölye Sultangazi Habipler’dedir: 2723. Sokak No: 27A. Diğer ilçelerde şube yoktur. Ölçü, işin yapılacağı adreste alınır.",
   },
   {
     q: "Keşif ücretli mi?",
@@ -77,7 +77,7 @@ function IstanbulPage() {
             Duvar genişliği, tavan yüksekliği, priz yeri ve ekran ölçüsü adreste alınır. Çizim bu ölçülerle hazırlanır. Kesim ve lake atölyede biter. Montaj günü panel, ışık ve konsol yerine oturtulur.
           </p>
           <p className="mt-4 text-stone">
-            Telefon {contact.phoneDisplay}. Çalışma saati {contact.hours}. Müteahhit ve emlak ofislerinin şantiye keşfi de aynı düzendedir.
+            Atölye Sultangazi Habipler Mahallesi, 2723. Sokak No: 27A Dükkân adresindedir. Telefon {contact.phoneDisplay}. Çalışma saati {contact.hours}. Diğer ilçelerde şube yoktur; ölçü, işin yapılacağı adreste alınır.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={whatsappHref()} className="bg-ink px-5 py-3 text-sm text-paper">
