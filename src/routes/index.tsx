@@ -84,7 +84,7 @@ function Home() {
             <p className="mt-8 font-display text-5xl">{mirrorPrice.from}</p>
             <p className="text-sm text-panel">{mirrorPrice.size}, başlangıç</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={whatsappHref("Merhaba, 180×80 ayna için yazıyorum.")} className="bg-paper px-5 py-3 text-sm text-ink">
+              <a href={whatsappHref()} className="bg-paper px-5 py-3 text-sm text-ink">
                 WhatsApp
               </a>
               <Link to="/hizmetler/$slug" params={{ slug: "ayna-unitesi" }} className="border border-stone px-5 py-3 text-sm text-paper">

@@ -25,6 +25,8 @@ import {
   renderWebManifest,
 } from "../../scripts/grok-pwa-shared.mjs";
 
+process.env.VITE_GROK_EXTENSIONS = "0";
+
 interface GrokPwaEvent {
   url: URL;
   req: { method: string; headers: Headers };
@@ -38,12 +40,15 @@ function requestHost(event: GrokPwaEvent): string {
 
 function brandShareChunk(chunk: Uint8Array, host: string): Uint8Array {
   const raw = Buffer.from(chunk).toString("latin1");
-  if (!raw.includes("__grok/icon-180") && !raw.includes("og.grok.me") && !raw.includes("</head>")) {
+  if (!raw.includes("__grok/") && !raw.includes("og.grok.me") && !raw.includes("extensions.js") && !raw.includes("</head>")) {
     return chunk;
   }
   const name = host.split(",")[0]?.trim().split(":")[0] ?? "";
   const share = name ? `https://${name}/share.jpg` : "/share.jpg";
   let next = raw.replaceAll("/__grok/icon-180.png", "/icon-180.png");
+  next = next.replace(/<link\b[^>]*href="\/__grok\/manifest[^"]*"[^>]*>/g, "");
+  next = next.replace(/<meta\b[^>]*(?:name|property)=["']grok[^"']*["'][^>]*>/g, "");
+  next = next.replace(/<script\b[^>]*grok-app-builder\/extensions\.js[^>]*>\s*<\/script>/g, "");
   next = next.replace(/https:\/\/og\.grok\.me\/v1\/card\.png[^"']*/g, share);
   if (name && next.includes("</head>") && !/property=["']og:image["']/.test(next)) {
     next = next.replace(

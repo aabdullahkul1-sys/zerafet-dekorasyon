@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import { contact } from "@/lib/site";
 
 const widths = ["2 metreden dar", "2–3 metre", "3–4 metre", "4 metreden geniş", "Henüz ölçmedim"];
@@ -21,8 +21,6 @@ const empty: Draft = {
   interest: interests[0],
   note: "",
 };
-
-const storageKey = "zerafet-talepler";
 
 function digits(value: string) {
   return value.replace(/\D/g, "");
@@ -47,16 +45,6 @@ export function QuoteForm() {
   const [errors, setErrors] = useState<Partial<Record<keyof Draft, string>>>({});
   const [sent, setSent] = useState<Draft | null>(null);
   const [copied, setCopied] = useState(false);
-  const [history, setHistory] = useState<Draft[]>([]);
-
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(storageKey);
-      if (raw) setHistory(JSON.parse(raw) as Draft[]);
-    } catch {
-      setHistory([]);
-    }
-  }, []);
 
   function update<K extends keyof Draft>(key: K, value: Draft[K]) {
     setDraft((current) => ({ ...current, [key]: value }));
@@ -71,9 +59,6 @@ export function QuoteForm() {
     setErrors(next);
     if (Object.keys(next).length) return;
     const saved = { ...draft, name: draft.name.trim(), city: draft.city.trim() };
-    const list = [saved, ...history].slice(0, 6);
-    setHistory(list);
-    localStorage.setItem(storageKey, JSON.stringify(list));
     setSent(saved);
     setDraft(empty);
   }
@@ -157,16 +142,6 @@ export function QuoteForm() {
       <button type="submit" className="mt-6 bg-ink px-5 py-3 text-sm text-paper">
         Talebi hazırla
       </button>
-      <p className="mt-3 text-xs text-stone">Bağlayıcı fiyat değildir. Bu cihazda son talepleriniz durur.</p>
-      {history.length ? (
-        <ul className="mt-4 space-y-2 border-t border-line pt-4 text-sm text-stone">
-          {history.map((item, index) => (
-            <li key={`${item.phone}-${index}`}>
-              {item.name} · {item.city} · {item.interest}
-            </li>
-          ))}
-        </ul>
-      ) : null}
     </form>
   );
 }

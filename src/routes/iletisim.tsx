@@ -47,7 +47,7 @@ function ContactPage() {
           <div>
             <dt className="text-stone">WhatsApp</dt>
             <dd>
-              <a className="text-ink" href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")}>
+              <a className="text-ink" href={whatsappHref()}>
                 {contact.phoneDisplay}
               </a>
             </dd>

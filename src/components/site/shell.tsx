@@ -53,7 +53,7 @@ export function SiteHeader() {
           ) : null}
         </nav>
         <div className="flex items-center gap-2">
-          <a href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")} className="border border-line px-3 py-2.5 text-sm text-ink">
+          <a href={whatsappHref()} className="border border-line px-3 py-2.5 text-sm text-ink">
             WhatsApp
           </a>
           <Link to="/iletisim" className="hidden bg-ink px-4 py-2.5 text-sm text-paper sm:inline-flex">
@@ -85,7 +85,7 @@ export function SiteHeader() {
               </a>
             ) : null}
             <a
-              href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")}
+              href={whatsappHref()}
               className="mt-4 border border-line px-4 py-3 text-center text-sm text-ink"
             >
               WhatsApp · {contact.phoneDisplay}
