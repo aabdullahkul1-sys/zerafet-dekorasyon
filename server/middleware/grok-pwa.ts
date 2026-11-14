@@ -25,10 +25,6 @@ import {
   renderWebManifest,
 } from "../../scripts/grok-pwa-shared.mjs";
 
-// This is a customer site, not a Grok app. The published page must not ask
-// visitors to download Grok. Set before any HTML response is transformed.
-process.env.VITE_GROK_EXTENSIONS = "0";
-
 interface GrokPwaEvent {
   url: URL;
   req: { method: string; headers: Headers };
@@ -40,6 +36,24 @@ function requestHost(event: GrokPwaEvent): string {
   );
 }
 
+function brandShareChunk(chunk: Uint8Array, host: string): Uint8Array {
+  const raw = Buffer.from(chunk).toString("latin1");
+  if (!raw.includes("__grok/icon-180") && !raw.includes("og.grok.me") && !raw.includes("</head>")) {
+    return chunk;
+  }
+  const name = host.split(",")[0]?.trim().split(":")[0] ?? "";
+  const share = name ? `https://${name}/share.jpg` : "/share.jpg";
+  let next = raw.replaceAll("/__grok/icon-180.png", "/icon-180.png");
+  next = next.replace(/https:\/\/og\.grok\.me\/v1\/card\.png[^"']*/g, share);
+  if (name && next.includes("</head>") && !/property=["']og:image["']/.test(next)) {
+    next = next.replace(
+      "</head>",
+      `<meta property="og:image" content="${share}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"></head>`,
+    );
+  }
+  return Buffer.from(next, "latin1");
+}
+
 function injectHeadStreaming(response: Response, host: string): Response {
   const injector = createHeadInjector({
     host,
@@ -48,10 +62,10 @@ function injectHeadStreaming(response: Response, host: string): Response {
   const transformed = response.body!.pipeThrough(
     new TransformStream<Uint8Array, Uint8Array>({
       transform(chunk, controller) {
-        for (const out of injector.push(chunk)) controller.enqueue(out);
+        for (const out of injector.push(chunk)) controller.enqueue(brandShareChunk(out, host));
       },
       flush(controller) {
-        for (const out of injector.flush()) controller.enqueue(out);
+        for (const out of injector.flush()) controller.enqueue(brandShareChunk(out, host));
       },
     }),
   );

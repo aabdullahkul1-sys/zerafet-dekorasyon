@@ -57,7 +57,7 @@ export function organizationJson(imagePath: string) {
     description: site.description,
     url: site.url,
     image: `${site.url}${imagePath}`,
-    logo: `${site.url}/favicon.svg`,
+    logo: `${site.url}/icon-180.png`,
     telephone: contact.phoneTel,
     areaServed: { "@type": "Country", name: "Türkiye" },
     knowsLanguage: "tr",
