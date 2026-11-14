@@ -3,8 +3,8 @@ export const site = {
   shortName: "Zerafet",
   tagline: "Özel ölçü TV duvarları, ayna ve dresuar",
   description:
-    "İstanbul’da özel ölçü TV ünitesi, duvar dekorasyonu ve LED’li ayna. 180×80 cm ayna 3.500 TL’den başlar. Lambri ve şömineli konsol yerinde monte edilir.",
-  url: "https://zerafetdekorasyon.com",
+    "İstanbul’da özel ölçü duvar dekorasyonu, TV ünitesi ve LED’li ayna. 180×80 cm ayna 3.500 TL’den başlar. Keşif ilçede yapılır, üretim atölyede tamamlanır.",
+  url: "https://zerafetdekorasyon.com.tr",
   locale: "tr-TR",
 } as const;
 
