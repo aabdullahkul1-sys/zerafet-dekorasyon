@@ -46,6 +46,11 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          {contact.instagram ? (
+            <a href={contact.instagram} target="_blank" rel="noreferrer" className="text-sm text-stone">
+              Instagram
+            </a>
+          ) : null}
         </nav>
         <div className="flex items-center gap-2">
           <a href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")} className="border border-line px-3 py-2.5 text-sm text-ink">
@@ -74,6 +79,11 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            {contact.instagram ? (
+              <a href={contact.instagram} target="_blank" rel="noreferrer" className="border-b border-line py-4 font-display text-3xl text-ink">
+                Instagram
+              </a>
+            ) : null}
             <a
               href={whatsappHref("Merhaba, Zerafet Dekorasyon. Bilgi almak istiyorum.")}
               className="mt-4 border border-line px-4 py-3 text-center text-sm text-ink"
@@ -134,6 +144,11 @@ export function SiteFooter() {
           {contact.whatsapp ? (
             <a className="mt-2 block text-sm text-paper" href={whatsappHref()}>
               WhatsApp
+            </a>
+          ) : null}
+          {contact.instagram ? (
+            <a className="mt-2 block text-sm text-paper" href={contact.instagram} target="_blank" rel="noreferrer">
+              Instagram · @arya_aynadekor
             </a>
           ) : null}
           {contact.email ? (

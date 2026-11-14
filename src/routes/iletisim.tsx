@@ -56,8 +56,8 @@ function ContactPage() {
             <div>
               <dt className="text-stone">Instagram</dt>
               <dd>
-                <a className="text-ink" href={contact.instagram}>
-                  {contact.instagram.replace("https://", "")}
+                <a className="text-ink" href={contact.instagram} target="_blank" rel="noreferrer">
+                  @arya_aynadekor
                 </a>
               </dd>
             </div>

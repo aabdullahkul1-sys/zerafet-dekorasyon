@@ -22,7 +22,7 @@ export const contact: {
   phoneTel: "+905350528233",
   whatsapp: "905350528233",
   email: "",
-  instagram: "",
+  instagram: "https://www.instagram.com/arya_aynadekor/",
   hours: "Pazartesi–Cumartesi, 09:00–19:00",
   serviceNote: "Yerinde keşif ve montaj. Net teklif, ölçü ve çizimden sonra yazılır.",
 };

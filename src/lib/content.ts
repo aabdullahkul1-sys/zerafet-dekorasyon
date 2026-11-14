@@ -53,6 +53,41 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "cubuk-led",
+    title: "Çubuk LED, krem lambri",
+    excerpt: "Krem flütün üstünde ayrı boylarda dikey çubuk LED. TV çerçevesi ve asma konsol aynı ışıkta.",
+    image: "/works/cubuk-led.jpg",
+    alt: "Krem lambri TV duvarı, farklı boylarda dikey çubuk LED, ışıklı TV çerçevesi ve asma konsol",
+    tags: ["lambri"],
+    room: "Salon",
+    featured: true,
+    story:
+      "Duvarın tamamı krem flüt. Işık, panelin üstünden inen çubuk LED’lerle geliyor; boylar bilinçli olarak aynı değil. Televizyon ince bir ışık çerçevesinin içinde, konsol duvardan kopuk ve altı da aydınlık.",
+    specs: [
+      { label: "Duvar", value: "Krem flütlü lambri" },
+      { label: "Işık", value: "Dikey çubuk LED" },
+      { label: "TV", value: "Işıklı çerçeve" },
+      { label: "Konsol", value: "Asma, kapaklı" },
+    ],
+  },
+  {
+    slug: "kemer-flut",
+    title: "Flüt üzerinde kemer ayna",
+    excerpt: "Bej flüt kaplamanın içinde kemer ayna ve tek çekmeceli asma konsol.",
+    image: "/works/kemer-flut.jpg",
+    alt: "Bej flütlü duvar kaplaması, kemer ayna ve asma konsol",
+    tags: ["ayna", "lambri"],
+    room: "Antre",
+    story:
+      "Ayna, flüt kaplamanın içine kemer olarak oturuyor. Konsol tek çekmece ve duvardan kopuk. Kapı pervazı kaplamanın dışında bırakıldı.",
+    specs: [
+      { label: "Zemin", value: "Bej flüt" },
+      { label: "Ayna", value: "Kemer" },
+      { label: "Konsol", value: "Asma, tek çekmece" },
+      { label: "Ölçü", value: "Kapı payına göre" },
+    ],
+  },
+  {
     slug: "antrasit-somine",
     title: "Antrasit lambri, ateş çizgisi",
     excerpt: "Koyu dikey çıtalar, beyaz aplikler ve konsolun içinde elektrikli şömine.",
@@ -510,13 +545,13 @@ export const services: Service[] = [
   {
     slug: "aydinlatma",
     index: "04",
-    title: "Gizli LED ve aplik",
-    lead: "Işık sonradan eklenmiş bir şerit gibi durmamalı. Yerini panelin içinde, çizimde alır.",
+    title: "Gizli LED ve çubuk ışık",
+    lead: "Çubuk LED, gizli çerçeve ve aplik. Işık panelin içinde, çizimde yerini alır.",
     body: [
-      "Çerçeve LED’i, dikey hatlar, vitrin içi ve yukarı-aşağı aplik ayrı anahtarlanabilir. Gece senaryosu gündüzden bağımsızdır.",
-      "Şeritler servis boşluğuyla gizlenir; arıza olursa tüm duvar sökülmez.",
+      "Dikey çubuklar flütün üstünden iner; boyları aynı olmak zorunda değildir. Çerçeve LED’i televizyonun kenarını tutar, konsolun altı ayrı bir hat olabilir.",
+      "Şeritler servis boşluğuyla gizlenir. Gece senaryosu gündüzden bağımsız açılır.",
     ],
-    points: ["Çerçeve, dikey hat, vitrin içi", "Ayrı senaryo", "Servis payı", "Sıcak ışık tonu"],
+    points: ["Dikey çubuk LED", "TV çevresi çerçevesi", "Ayrı senaryo", "Servis payı"],
     tag: "lambri",
   },
   {
@@ -683,10 +718,10 @@ export const serviceSeo: Record<
     note: "Bu bir duvar paneli görünümüdür, ocak taşı değildir. Damarın sürekliliği kesim planında işaretlenir.",
   },
   aydinlatma: {
-    title: "Ledli TV duvarı",
+    title: "Çubuk LED TV duvarı",
     description:
-      "Ledli TV duvarı: gizli çerçeve, dikey ışık hattı, vitrin içi ve aplik. Gece senaryosu ayrı açılır. Şeritler servis payıyla gizlenir.",
-    note: "Işık sonradan yapıştırılmaz. Sürücü ve şerit, panelin içinde ulaşılabilir bir boşlukta durur.",
+      "Çubuk LED TV duvarı: krem lambri üzerinde dikey ışık çubukları, ışıklı TV çerçevesi ve asma konsol. Özel ölçüde üretilir.",
+    note: "Çubukların boyu ve aralığı duvar genişliğine göre çizilir. Işık sonradan yapıştırılmaz.",
   },
   vitrin: {
     title: "Işıklı vitrin",
@@ -727,7 +762,7 @@ export function linksForProject(tags: Tag[]) {
   return tagLinks.filter((item) => tags.includes(item.tag));
 }
 
-const updated = "2026-11-09";
+const updated = "2026-11-14";
 
 export function sitemapEntries() {
   const pages: { path: string; priority: string; image?: string; caption?: string }[] = [

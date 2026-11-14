@@ -40,7 +40,7 @@ function Home() {
               Televizyonun durduğu duvar, odanın kendisi olsun.
             </h1>
             <p className="mt-5 max-w-md text-stone">
-              Lambri, mermer görünümlü panel, gizli LED, ışıklı vitrin ve şömineli konsol. Her parça duvarın ölçüsüne göre atölyede üretilir, yerinde monte edilir.
+              Lambri, mermer görünümlü panel, çubuk LED, ışıklı vitrin ve şömineli konsol. Her parça duvarın ölçüsüne göre atölyede üretilir, yerinde monte edilir.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
