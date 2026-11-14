@@ -174,6 +174,29 @@ function Home() {
       </section>
 
       <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+          <h2 className="font-display text-4xl text-ink">İstanbul</h2>
+          <p className="mt-4 max-w-2xl text-stone">
+            Duvar dekorasyonu ve ayna dekorasyonu ilçelerde yerinde uygulanır. Müteahhit ve emlak ofisleri için örnek daire işi de aynı atölyeden çıkar.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link to="/istanbul" className="border border-line px-5 py-3 text-sm text-ink">
+              İlçeler
+            </Link>
+            <Link to="/duvar-dekorasyonu" className="border border-line px-5 py-3 text-sm text-ink">
+              Duvar dekorasyonu
+            </Link>
+            <Link to="/ayna-dekorasyonu" className="border border-line px-5 py-3 text-sm text-ink">
+              Ayna dekorasyonu
+            </Link>
+            <Link to="/muteahhit-emlak" className="border border-line px-5 py-3 text-sm text-ink">
+              Müteahhit ve emlak
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:py-20">
           <h2 className="font-display text-4xl text-ink">Sık sorulan sorular</h2>
           <div className="mt-6">

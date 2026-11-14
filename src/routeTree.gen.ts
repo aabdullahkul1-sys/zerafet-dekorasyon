@@ -12,8 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as AtolyeRouteImport } from './routes/atolye'
+import { Route as AynaDekorasyonuRouteImport } from './routes/ayna-dekorasyonu'
+import { Route as DuvarDekorasyonuRouteImport } from './routes/duvar-dekorasyonu'
 import { Route as HizmetlerRouteImport } from './routes/hizmetler'
 import { Route as IletisimRouteImport } from './routes/iletisim'
+import { Route as IstanbulRouteImport } from './routes/istanbul'
+import { Route as MuteahhitEmlakRouteImport } from './routes/muteahhit-emlak'
 import { Route as ProjelerRouteImport } from './routes/projeler'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as HizmetlerSlugRouteImport } from './routes/hizmetler.$slug'
@@ -34,6 +38,16 @@ const AtolyeRoute = AtolyeRouteImport.update({
   path: '/atolye',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AynaDekorasyonuRoute = AynaDekorasyonuRouteImport.update({
+  id: '/ayna-dekorasyonu',
+  path: '/ayna-dekorasyonu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DuvarDekorasyonuRoute = DuvarDekorasyonuRouteImport.update({
+  id: '/duvar-dekorasyonu',
+  path: '/duvar-dekorasyonu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HizmetlerRoute = HizmetlerRouteImport.update({
   id: '/hizmetler',
   path: '/hizmetler',
@@ -42,6 +56,16 @@ const HizmetlerRoute = HizmetlerRouteImport.update({
 const IletisimRoute = IletisimRouteImport.update({
   id: '/iletisim',
   path: '/iletisim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IstanbulRoute = IstanbulRouteImport.update({
+  id: '/istanbul',
+  path: '/istanbul',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MuteahhitEmlakRoute = MuteahhitEmlakRouteImport.update({
+  id: '/muteahhit-emlak',
+  path: '/muteahhit-emlak',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjelerRoute = ProjelerRouteImport.update({
@@ -69,8 +93,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/atolye': typeof AtolyeRoute
+  '/ayna-dekorasyonu': typeof AynaDekorasyonuRoute
+  '/duvar-dekorasyonu': typeof DuvarDekorasyonuRoute
   '/hizmetler': typeof HizmetlerRouteWithChildren
   '/iletisim': typeof IletisimRoute
+  '/istanbul': typeof IstanbulRoute
+  '/muteahhit-emlak': typeof MuteahhitEmlakRoute
   '/projeler': typeof ProjelerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/hizmetler/$slug': typeof HizmetlerSlugRoute
@@ -80,8 +108,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/atolye': typeof AtolyeRoute
+  '/ayna-dekorasyonu': typeof AynaDekorasyonuRoute
+  '/duvar-dekorasyonu': typeof DuvarDekorasyonuRoute
   '/hizmetler': typeof HizmetlerRouteWithChildren
   '/iletisim': typeof IletisimRoute
+  '/istanbul': typeof IstanbulRoute
+  '/muteahhit-emlak': typeof MuteahhitEmlakRoute
   '/projeler': typeof ProjelerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/hizmetler/$slug': typeof HizmetlerSlugRoute
@@ -92,8 +124,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/atolye': typeof AtolyeRoute
+  '/ayna-dekorasyonu': typeof AynaDekorasyonuRoute
+  '/duvar-dekorasyonu': typeof DuvarDekorasyonuRoute
   '/hizmetler': typeof HizmetlerRouteWithChildren
   '/iletisim': typeof IletisimRoute
+  '/istanbul': typeof IstanbulRoute
+  '/muteahhit-emlak': typeof MuteahhitEmlakRoute
   '/projeler': typeof ProjelerRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/hizmetler/$slug': typeof HizmetlerSlugRoute
@@ -105,8 +141,12 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/atolye'
+    | '/ayna-dekorasyonu'
+    | '/duvar-dekorasyonu'
     | '/hizmetler'
     | '/iletisim'
+    | '/istanbul'
+    | '/muteahhit-emlak'
     | '/projeler'
     | '/sitemap.xml'
     | '/hizmetler/$slug'
@@ -116,8 +156,12 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/atolye'
+    | '/ayna-dekorasyonu'
+    | '/duvar-dekorasyonu'
     | '/hizmetler'
     | '/iletisim'
+    | '/istanbul'
+    | '/muteahhit-emlak'
     | '/projeler'
     | '/sitemap.xml'
     | '/hizmetler/$slug'
@@ -127,8 +171,12 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/atolye'
+    | '/ayna-dekorasyonu'
+    | '/duvar-dekorasyonu'
     | '/hizmetler'
     | '/iletisim'
+    | '/istanbul'
+    | '/muteahhit-emlak'
     | '/projeler'
     | '/sitemap.xml'
     | '/hizmetler/$slug'
@@ -139,8 +187,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   AtolyeRoute: typeof AtolyeRoute
+  AynaDekorasyonuRoute: typeof AynaDekorasyonuRoute
+  DuvarDekorasyonuRoute: typeof DuvarDekorasyonuRoute
   HizmetlerRoute: typeof HizmetlerRouteWithChildren
   IletisimRoute: typeof IletisimRoute
+  IstanbulRoute: typeof IstanbulRoute
+  MuteahhitEmlakRoute: typeof MuteahhitEmlakRoute
   ProjelerRoute: typeof ProjelerRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -168,6 +220,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AtolyeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ayna-dekorasyonu': {
+      id: '/ayna-dekorasyonu'
+      path: '/ayna-dekorasyonu'
+      fullPath: '/ayna-dekorasyonu'
+      preLoaderRoute: typeof AynaDekorasyonuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/duvar-dekorasyonu': {
+      id: '/duvar-dekorasyonu'
+      path: '/duvar-dekorasyonu'
+      fullPath: '/duvar-dekorasyonu'
+      preLoaderRoute: typeof DuvarDekorasyonuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hizmetler': {
       id: '/hizmetler'
       path: '/hizmetler'
@@ -180,6 +246,20 @@ declare module '@tanstack/react-router' {
       path: '/iletisim'
       fullPath: '/iletisim'
       preLoaderRoute: typeof IletisimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/istanbul': {
+      id: '/istanbul'
+      path: '/istanbul'
+      fullPath: '/istanbul'
+      preLoaderRoute: typeof IstanbulRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/muteahhit-emlak': {
+      id: '/muteahhit-emlak'
+      path: '/muteahhit-emlak'
+      fullPath: '/muteahhit-emlak'
+      preLoaderRoute: typeof MuteahhitEmlakRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projeler': {
@@ -241,8 +321,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   AtolyeRoute: AtolyeRoute,
+  AynaDekorasyonuRoute: AynaDekorasyonuRoute,
+  DuvarDekorasyonuRoute: DuvarDekorasyonuRoute,
   HizmetlerRoute: HizmetlerRouteWithChildren,
   IletisimRoute: IletisimRoute,
+  IstanbulRoute: IstanbulRoute,
+  MuteahhitEmlakRoute: MuteahhitEmlakRoute,
   ProjelerRoute: ProjelerRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

@@ -118,6 +118,26 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/istanbul" className="text-paper">
+                İstanbul
+              </Link>
+            </li>
+            <li>
+              <Link to="/duvar-dekorasyonu" className="text-paper">
+                Duvar dekorasyonu
+              </Link>
+            </li>
+            <li>
+              <Link to="/ayna-dekorasyonu" className="text-paper">
+                Ayna dekorasyonu
+              </Link>
+            </li>
+            <li>
+              <Link to="/muteahhit-emlak" className="text-paper">
+                Müteahhit ve emlak
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -183,7 +203,7 @@ export function NotFoundPage() {
 export function Crumbs({
   items,
 }: {
-  items: { label: string; to?: "/" | "/projeler" | "/hizmetler" | "/atolye" | "/iletisim" }[];
+  items: { label: string; to?: "/" | "/projeler" | "/hizmetler" | "/atolye" | "/iletisim" | "/istanbul" | "/duvar-dekorasyonu" | "/ayna-dekorasyonu" | "/muteahhit-emlak" }[];
 }) {
   return (
     <nav aria-label="Sayfa yolu">
@@ -214,7 +234,7 @@ export function PageIntro({
   kicker: string;
   title: string;
   text: string;
-  crumbs?: { label: string; to?: "/" | "/projeler" | "/hizmetler" | "/atolye" | "/iletisim" }[];
+  crumbs?: { label: string; to?: "/" | "/projeler" | "/hizmetler" | "/atolye" | "/iletisim" | "/istanbul" | "/duvar-dekorasyonu" | "/ayna-dekorasyonu" | "/muteahhit-emlak" }[];
 }) {
   return (
     <header className="border-b border-line">

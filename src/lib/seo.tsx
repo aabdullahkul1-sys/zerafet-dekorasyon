@@ -85,7 +85,10 @@ export function organizationJson(imagePath: string) {
       contactType: "customer service",
       availableLanguage: "Turkish",
     },
-    areaServed: { "@type": "Country", name: "Türkiye" },
+    areaServed: [
+      { "@type": "City", name: "İstanbul" },
+      { "@type": "Country", name: "Türkiye" },
+    ],
     knowsLanguage: "tr",
     inLanguage: "tr-TR",
   };

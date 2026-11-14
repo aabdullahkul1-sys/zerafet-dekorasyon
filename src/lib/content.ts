@@ -654,7 +654,65 @@ export const faq = [
     q: "Lambri nemli duvarda durur mu?",
     a: "Islak hacim değildir. Salon ve antre için üretilir. Duvar nemliyse önce kaynak kurutulur; ıslak yüzeye kaplama yapılmaz.",
   },
+  {
+    q: "İstanbul’da hangi ilçelere geliyorsunuz?",
+    a: "Keşif ve montaj, İstanbul’un Avrupa ve Anadolu yakasında yapılır. Kadıköy, Üsküdar, Ataşehir, Beşiktaş, Şişli, Bakırköy, Başakşehir ve Beylikdüzü bu bölgededir. İlçelerde şube yoktur; ölçü yerinde alınır.",
+  },
+  {
+    q: "Müteahhit ve emlak ofisleriyle çalışıyor musunuz?",
+    a: "Evet. Örnek daire, site teslimi ve emlak sunumu için TV duvarı, ayna ve dresuar aynı çizimde hazırlanır. Daire sayısı ve ölçü netleşince teklif verilir.",
+  },
+  {
+    q: "Duvar dekorasyonu hazır ürün mü?",
+    a: "Hayır. Lambri, mermer görünümlü panel, çubuk LED ve şömineli konsol duvarın ölçüsüne göre üretilir.",
+  },
 ];
+
+export const istanbulDistricts = {
+  avrupa: [
+    "Arnavutköy",
+    "Avcılar",
+    "Bağcılar",
+    "Bahçelievler",
+    "Bakırköy",
+    "Başakşehir",
+    "Bayrampaşa",
+    "Beşiktaş",
+    "Beylikdüzü",
+    "Beyoğlu",
+    "Büyükçekmece",
+    "Çatalca",
+    "Esenler",
+    "Esenyurt",
+    "Eyüpsultan",
+    "Fatih",
+    "Gaziosmanpaşa",
+    "Güngören",
+    "Kağıthane",
+    "Küçükçekmece",
+    "Sarıyer",
+    "Silivri",
+    "Sultangazi",
+    "Şişli",
+    "Zeytinburnu",
+  ],
+  anadolu: [
+    "Adalar",
+    "Ataşehir",
+    "Beykoz",
+    "Çekmeköy",
+    "Kadıköy",
+    "Kartal",
+    "Maltepe",
+    "Pendik",
+    "Sancaktepe",
+    "Sultanbeyli",
+    "Şile",
+    "Tuzla",
+    "Ümraniye",
+    "Üsküdar",
+  ],
+} as const;
 
 export function projectBySlug(slug: string) {
   return projects.find((item) => item.slug === slug);
@@ -750,6 +808,10 @@ const updated = "2026-11-14";
 export function sitemapEntries() {
   const pages: { path: string; priority: string; image?: string; caption?: string }[] = [
     { path: "/", priority: "1.0", image: "/works/mermer-somine.jpg", caption: "Mermer görünümlü şömineli TV duvarı" },
+    { path: "/istanbul", priority: "0.9" },
+    { path: "/duvar-dekorasyonu", priority: "0.9" },
+    { path: "/ayna-dekorasyonu", priority: "0.9" },
+    { path: "/muteahhit-emlak", priority: "0.8" },
     { path: "/hizmetler", priority: "0.9" },
     { path: "/projeler", priority: "0.9" },
     { path: "/atolye", priority: "0.7" },
