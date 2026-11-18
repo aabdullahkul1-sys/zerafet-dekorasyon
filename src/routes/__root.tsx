@@ -14,6 +14,10 @@ export const Route = createRootRoute({
       { name: "description", content: site.description },
       { name: "theme-color", content: "#1a1714" },
       { name: "language", content: "Turkish" },
+      {
+        name: "google-site-verification",
+        content: "kbxrEvVnuURzqz71kLg6Xyu9UWey828KJsO-2ZFDLGs",
+      },
     ],
     links: [
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
