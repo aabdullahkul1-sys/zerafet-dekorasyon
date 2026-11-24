@@ -35,6 +35,108 @@ export const filters: { id: Tag | "tumu"; label: string }[] = [
 
 export const projects: Project[] = [
   {
+    slug: "mese-dikey-isik",
+    title: "Meşe flüt, dikey ışık",
+    excerpt: "İki yanda meşe flüt, arada gri zemin ve arkadan aydınlatmalı TV nişi.",
+    image: "/works/mese-dikey-isik.jpg",
+    alt: "Meşe flütlü TV duvarı, dikey LED çizgileri, ahşap tablalı beyaz konsol",
+    tags: ["ahsap", "lambri"],
+    room: "Salon",
+    story:
+      "Yan kanatlar meşe flüt. Ortadaki gri zemin televizyonu öne alıyor, nişin arkası sıcak ışıkla yıkanıyor. Dikey LED çizgileri flütün içinde iniyor. Konsol beyaz, üst tablası ahşap.",
+    specs: [
+      { label: "Yanlar", value: "Meşe flüt" },
+      { label: "Niş", value: "Arkadan aydınlatmalı" },
+      { label: "Işık", value: "Dikey LED çizgileri" },
+      { label: "Konsol", value: "Beyaz, ahşap tabla" },
+    ],
+  },
+  {
+    slug: "altin-flut-duvar",
+    title: "Sıcak ışık, flütlü duvar",
+    excerpt: "Flütlü yanlar sıcak ışıkla yıkanıyor. Beyaz panel ve uzun asma konsol.",
+    image: "/works/altin-flut-duvar.jpg",
+    alt: "Sıcak ışıklı flütlü TV duvarı, beyaz panel ve uzun asma konsol",
+    tags: ["lambri"],
+    room: "Salon",
+    story:
+      "Flüt duvarın iki yanında. Işık çıtaların arasından ve panelin çevresinden geliyor. Televizyon beyaz panelin üzerinde, altta uzun asma konsol.",
+    specs: [
+      { label: "Duvar", value: "Flütlü lambri" },
+      { label: "Panel", value: "Beyaz, çevresi ışıklı" },
+      { label: "Işık", value: "Sıcak, dikey" },
+      { label: "Konsol", value: "Uzun, asma" },
+    ],
+  },
+  {
+    slug: "beyaz-kemer-halka",
+    title: "Beyaz kemer ve halka ayna",
+    excerpt: "Antrede boydan kemer ayna, halka ayna ve iki çekmeceli asma dresuar.",
+    image: "/works/beyaz-kemer-halka.jpg",
+    alt: "Beyaz flütlü duvarda LED’li kemer ayna, halka ayna ve asma dresuar",
+    tags: ["ayna", "lambri"],
+    room: "Antre",
+    story:
+      "Duvar beyaz flüt. Solda boydan kemer ayna, ışık kontur boyunca iniyor. Sağ üstte halka ayna, altta iki çekmeceli asma dresuar. Ölçü kapı boşluğuna göre alındı.",
+    specs: [
+      { label: "Ayna", value: "Kemer ve halka" },
+      { label: "Işık", value: "Ayna konturu" },
+      { label: "Dresuar", value: "Asma, iki çekmece" },
+      { label: "Duvar", value: "Beyaz flüt" },
+    ],
+  },
+  {
+    slug: "antre-kemer-led",
+    title: "Antrede ışıklı kemer ayna",
+    excerpt: "Bej flüt duvarda kemer ayna, asma konsol ve duvar dolabı.",
+    image: "/works/antre-kemer-led.jpg",
+    alt: "Bej flütlü antre duvarı, LED konturlu kemer ayna ve asma konsol",
+    tags: ["ayna", "lambri"],
+    room: "Antre",
+    story:
+      "Antre duvarı baştan sona bej flüt. Sağda kemer ayna, konturu sıcak LED. Altında iki çekmeceli asma konsol. Solda duvar dolabı ve askılık, kapı payı boş bırakıldı.",
+    specs: [
+      { label: "Duvar", value: "Bej flüt" },
+      { label: "Ayna", value: "Kemer, LED kontur" },
+      { label: "Konsol", value: "Asma, iki çekmece" },
+      { label: "Yan", value: "Duvar dolabı" },
+    ],
+  },
+  {
+    slug: "bej-flut-panel",
+    title: "Bej flüt, gizli ışık",
+    excerpt: "TV’nin iki yanında bej flüt, panelin çevresinde ince ışık çizgisi.",
+    image: "/works/bej-flut-panel.jpg",
+    alt: "Bej flütlü salon duvarı, gizli ışıklı TV paneli ve uzun asma konsol",
+    tags: ["lambri"],
+    room: "Salon",
+    story:
+      "Panel duvardan bir kademe içeride. Işık üstten ve alttan ince bir çizgi olarak geliyor. İki yanda bej flüt aynı ritmi tutuyor. Konsol uzun, kapaklı ve duvardan kopuk.",
+    specs: [
+      { label: "Yanlar", value: "Bej flüt" },
+      { label: "Panel", value: "Gizli ışık çerçevesi" },
+      { label: "Konsol", value: "Uzun, asma" },
+      { label: "Zemin", value: "Düz bej" },
+    ],
+  },
+  {
+    slug: "organik-ayna",
+    title: "Organik form ayna",
+    excerpt: "Düz duvarda boydan, kenarı serbest biçimli ayna.",
+    image: "/works/organik-ayna.jpg",
+    alt: "Açık renk salonda boydan organik form ayna",
+    tags: ["ayna"],
+    room: "Salon",
+    story:
+      "Çerçevesiz, kenarı düz bir geometriye bağlı olmayan boydan ayna. Duvar sade bırakıldı; ayna tek parça olarak ölçülür.",
+    specs: [
+      { label: "Ayna", value: "Boydan, organik form" },
+      { label: "Çerçeve", value: "Yok" },
+      { label: "Duvar", value: "Düz, açık renk" },
+      { label: "Ölçü", value: "Duvara göre" },
+    ],
+  },
+  {
     slug: "mermer-somine",
     title: "Mermer zemin, şömineli konsol",
     excerpt: "Beyaz mermer görünümlü panel, iki yanda krem lambri, ortada elektrikli şömine.",
@@ -803,7 +905,7 @@ export function linksForProject(tags: Tag[]) {
   return tagLinks.filter((item) => tags.includes(item.tag));
 }
 
-const updated = "2026-11-14";
+const updated = "2026-11-24";
 
 export function sitemapEntries() {
   const pages: { path: string; priority: string; image?: string; caption?: string }[] = [
