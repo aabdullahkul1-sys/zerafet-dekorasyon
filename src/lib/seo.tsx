@@ -69,7 +69,7 @@ export function organizationJson(imagePath: string) {
     description: site.description,
     url: site.url,
     image: `${site.url}${imagePath}`,
-    logo: `${site.url}/icon-180.png`,
+    logo: `${site.url}/icon-512.png`,
     telephone: contact.phoneTel,
     address: {
       "@type": "PostalAddress",
